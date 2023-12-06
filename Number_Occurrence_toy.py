@@ -7,29 +7,30 @@
  #* print(onlyEven); //  4
 
 
-#def add_input_to_list(list_1):
-#    item_1 = input("Give me the numbers: ")
-#    list_1.append(item_1)
-#    return list_1
-
-#listOfNumbers = []
-#add_input_to_list(listOfNumbers)
-#print(listOfNumbers)
-
-
-evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
-
-
-findItem = 1
 def occurrenceFinder(listFinder):
-     for i in listFinder: #base case
-         if listFinder[i] == listFinder[i + 1]:
+    secondList = []
+    for i in listFinder: 
+         listFinder.count(i)
+         secondList.append(i)
+         if listFinder.count(i) == secondList(i):
              return listFinder[i]
          else:
-             return occurrenceFinder(listFinder)
+             return occurrenceFinder(listFinder[1:])
          
+quit()         
+def find_index(listIndex, value):
+    if value < 0 or value >= len(listIndex):
+        return None  
+    return listIndex[value]
+    
+
+#evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
+evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
+#print(evenOccurrence.count(2))
+#quit()
+even_Value = occurrenceFinder(evenOccurrence)
 print(occurrenceFinder(evenOccurrence))
-             
+print(find_index(evenOccurrence, even_Value))
          
     
 
