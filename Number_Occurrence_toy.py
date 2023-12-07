@@ -7,32 +7,20 @@
  #* print(onlyEven); //  4
 
 
-def occurrenceFinder(listFinder):
-    secondList = []
-    for i in listFinder: 
-         listFinder.count(i)
-         secondList.append(i)
-         if listFinder.count(i) == secondList(i):
-             return secondList[i]
-         else:
-             return occurrenceFinder(listFinder[1:])
-        
-        
-def find_index(listIndex, value):
-    if value < 0 or value >= len(listIndex):
-        return None  
-    return listIndex[value]
-    
+#evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
+#evenOccurrence = [1, 3, 43, 5 ,6, 7, 4, 0, 8, 9, 2]
+evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
 
-#evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
-evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
-testList = []
-#print(evenOccurrence.count(2))
-#quit()
-even_Value = occurrenceFinder(evenOccurrence, testList)
-print(occurrenceFinder(evenOccurrence))
-print(find_index(evenOccurrence, even_Value))
-         
+def occurrenceFinder(evenOccurrence):
+    for i in evenOccurrence: 
+         evenOccurrence.count(i)
+         if evenOccurrence.count(i) % 2 == 0:
+             return i
+        
+if occurrenceFinder(evenOccurrence) == None:
+    print("Null")
+else:
+    print(occurrenceFinder(evenOccurrence))
     
 
 

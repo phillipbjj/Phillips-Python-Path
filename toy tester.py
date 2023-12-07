@@ -1,23 +1,16 @@
 #TESTING
-evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
-testList = []
+#evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
+#evenOccurrence = [1, 3, 43, 5 ,6, 7, 4, 0, 8, 9, 2]
+evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
 
 def occurrenceFinder(evenOccurrence):
     for i in evenOccurrence: 
          evenOccurrence.count(i)
-         testList.append(i)
-         if evenOccurrence.count(i) == testList(i):
-             return testList[i]
-         else:
-             return occurrenceFinder(evenOccurrence[1:])
+         if evenOccurrence.count(i) % 2 == 0:
+             return i
         
-        
-def find_index(listIndex, value):
-    if value < 0 or value >= len(listIndex):
-        return None  
-    return listIndex[value]
-    
+if occurrenceFinder(evenOccurrence) == None:
+    print("Null")
+else:
+    print(occurrenceFinder(evenOccurrence))    
 
-#even_Value = occurrenceFinder(evenOccurrence, testList)
-print(occurrenceFinder(evenOccurrence))
-#print(find_index(evenOccurrence, even_Value))
