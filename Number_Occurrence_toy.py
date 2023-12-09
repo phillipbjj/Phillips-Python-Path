@@ -7,16 +7,20 @@
  #* print(onlyEven); //  4
 
 
-evenOccurrence = [2, 3, 5, 5 ,6, 7, 5, 7, 2, 2, 2]
+#evenOccurrence = [2, 3, 4, 5 ,6, 7, 4, 7, 2, 2, 2]
 #evenOccurrence = [1, 3, 43, 5 ,6, 7, 4, 0, 8, 9, 2]
-#evenOccurrence = [1, 7, 2, 7, 5, 6, 8, 9, 6, 7]
+evenOccurrence = [1, 7, 2, 4, 5, 6, 8, 9, 6, 4]
 def occurrenceFinder(evenList):
     evenDict = dict()
+
     for i in (evenList):
         evenDict[i] = evenDict.get(i, 0) + 1
-        if evenDict[i] == evenDict.get(2):
-            return i
 
+    for i in evenList:
+        if evenDict[i] % 2 == 0:
+            return i
+        
+    return "Null"
 print(occurrenceFinder(evenOccurrence))
 
 quit()  
