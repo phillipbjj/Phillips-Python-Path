@@ -12,51 +12,26 @@
 #Example:
 #rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
 
-outcome = []
-rounds = 3  # number of rounds
-choice = "R"  #first choice
-while rounds > 0:
-    rounds = rounds - 1
+#print(f"Turn {turn+1}: The number is 1") - formatted string literals
 
-    #def rockPaperScissors(choice):
-    if choice == "R":
-        outcome.append("R")
-    elif choice == "P":
-        outcome.append("P")
-    elif choice == "S":
-        outcome.append("S")
-            #elif choice == "R" or choice == "P" or choice == "S":
-                #rockPaperScissors()
-    else:
-        outcome.append("Not a choice")
-clean_outcome = ''.join(outcome)
-print(clean_outcome)
+rounds = 3
 
-
-
-def rockPaperScissors(choice):
-    if choice == "R":
-        outcome.append("R")
-        
-    elif choice == "P":
-        outcome.append("P")
-        
-    elif choice == "S":
-        outcome.append("S")
-        
-            #elif choice == "R" or choice == "P" or choice == "S":
-                #rockPaperScissors()
-
-print(outcome)
-print(outcome2)
-print(outcome3)
-
-
-
-
-
-
-
+# Define the list of possibilities
+moves = ["R", "P", "S"]
+move_Rock = "R"
+move_Paper = "P"
+move_Scissors = "S"
+outcomes = []
+#def rockPaperScissorsGame(3)
+for turn in range(rounds):
+    for move in moves:
+        if move == "R":
+            result1 = "R"
+           
+        elif move == "P":
+            
+        elif move == "S":
+            
 
 
 
