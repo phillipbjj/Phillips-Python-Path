@@ -16,8 +16,14 @@
 
 
 # Define the list of possibilities
+#possibleMoves = [1, 2, 3]
+possibleMoves = ["R", "P", "S"]
+rounds = 3
+def rockPaperScissorsGame(possibleMoves, rounds):
+    for move in possibleMoves:
+        
 
-
+quit()
 def rockPaperScissorsGame(rps_moves, rounds):
     if rounds != 0:
         for move in range(len(rps_moves)):

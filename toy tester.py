@@ -12,16 +12,17 @@
 #Example:
 #rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
 
-def rockPaperScissorsGame(moves, rounds):
+def rockPaperScissorsGame(rps_moves, rounds):
     if rounds != 0:
-        for lol in range(len(moves)):
-            for result in rockPaperScissorsGame(moves[lol:], rounds - 1):
-                yield [moves[lol]] + result
+        for move in range(len(rps_moves)):
+            for outcome in rockPaperScissorsGame(rps_moves[move:], rounds - 1):
+                yield [rps_moves[move]] + outcome
     else:
         yield []
+            
 
-moves = ["R", "P", "S",]  # list of moves
-rounds = 3  # number of rounds
+rps_moves = ["R", "P", "S"]
+rounds = 3
 
-for combination in rockPaperScissorsGame(moves, rounds):
-    print(combination)
+for options in rockPaperScissorsGame(rps_moves, rounds):
+    print(options)
