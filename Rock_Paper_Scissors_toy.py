@@ -14,25 +14,23 @@
 
 #print(f"Turn {turn+1}: The number is 1") - formatted string literals
 
-rounds = 3
 
 # Define the list of possibilities
-moves = ["R", "P", "S"]
-move_Rock = "R"
-move_Paper = "P"
-move_Scissors = "S"
-outcomes = []
-#def rockPaperScissorsGame(3)
-for turn in range(rounds):
-    for move in moves:
-        if move == "R":
-            result1 = "R"
-           
-        elif move == "P":
-            
-        elif move == "S":
+
+
+def rockPaperScissorsGame(rps_moves, rounds):
+    if rounds != 0:
+        for move in range(len(rps_moves)):
+            for outcome in rockPaperScissorsGame(rps_moves[move:], rounds - 1):
+                yield [rps_moves[move]] + outcome
+    else:
+        yield []
             
 
+rps_moves = ["R", "P", "S"]
+rounds = 3
 
-
-
+for options in rockPaperScissorsGame(rps_moves, rounds):
+    print(options)
+    
+    

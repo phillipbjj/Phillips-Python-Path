@@ -12,41 +12,16 @@
 #Example:
 #rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
 
-outcome = []
-rounds = 3  # number of rounds
-choice = "R"  #first choice
-while rounds > 0:
-    rounds = rounds - 1
-
-    #def rockPaperScissors(choice):
-    if choice == "R":
-        outcome.append("R")
-    elif choice == "P":
-        outcome.append("P")
-    elif choice == "S":
-        outcome.append("S")
-            #elif choice == "R" or choice == "P" or choice == "S":
-                #rockPaperScissors()
+def rockPaperScissorsGame(moves, rounds):
+    if rounds != 0:
+        for lol in range(len(moves)):
+            for result in rockPaperScissorsGame(moves[lol:], rounds - 1):
+                yield [moves[lol]] + result
     else:
-        outcome.append("Not a choice")
-clean_outcome = ''.join(outcome)
-print(clean_outcome)
+        yield []
 
+moves = ["R", "P", "S",]  # list of moves
+rounds = 3  # number of rounds
 
-
-def rockPaperScissors(choice):
-    if choice == "R":
-        outcome.append("R")
-        
-    elif choice == "P":
-        outcome.append("P")
-        
-    elif choice == "S":
-        outcome.append("S")
-        
-            #elif choice == "R" or choice == "P" or choice == "S":
-                #rockPaperScissors()
-
-print(outcome)
-print(outcome2)
-print(outcome3)
+for combination in rockPaperScissorsGame(moves, rounds):
+    print(combination)
