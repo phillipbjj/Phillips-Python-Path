@@ -20,8 +20,11 @@
 possibleMoves = ["R", "P", "S"]
 rounds = 3
 def rockPaperScissorsGame(possibleMoves, rounds):
-    for move in possibleMoves:
-        
+    if rounds == 0:
+        return "Empty"
+    else:
+        sequences = rockPaperScissorsGame(possibleMoves, rounds - 1)
+        return 
 
 quit()
 def rockPaperScissorsGame(rps_moves, rounds):

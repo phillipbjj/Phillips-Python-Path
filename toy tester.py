@@ -12,17 +12,15 @@
 #Example:
 #rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
 
-def rockPaperScissorsGame(rps_moves, rounds):
-    if rounds != 0:
-        for move in range(len(rps_moves)):
-            for outcome in rockPaperScissorsGame(rps_moves[move:], rounds - 1):
-                yield [rps_moves[move]] + outcome
+def generate_combinations(options, rounds):
+    if rounds == 0:
+        return [[]]
     else:
-        yield []
-            
+        smaller_combinations = generate_combinations(options, rounds - 1)
+        return [[option] + combination for option in options for combination in smaller_combinations]
 
-rps_moves = ["R", "P", "S"]
+options = ["R", "P", "S"]
 rounds = 3
 
-for options in rockPaperScissorsGame(rps_moves, rounds):
-    print(options)
+for combination in generate_combinations(options, rounds):
+    print(combination)
