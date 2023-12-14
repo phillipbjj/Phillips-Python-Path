@@ -17,29 +17,17 @@
 
 # Define the list of possibilities
 #possibleMoves = [1, 2, 3]
+
 possibleMoves = ["R", "P", "S"]
 rounds = 3
 def rockPaperScissorsGame(possibleMoves, rounds):
     if rounds == 0:
-        return "Empty"
+        return [[]]
     else:
-        sequences = rockPaperScissorsGame(possibleMoves, rounds - 1)
-        return 
+        subset2 = rockPaperScissorsGame(possibleMoves, rounds - 1)
+        return [[move] + subset1 for move in possibleMoves for subset1 in subset2]
 
-quit()
-def rockPaperScissorsGame(rps_moves, rounds):
-    if rounds != 0:
-        for move in range(len(rps_moves)):
-            for outcome in rockPaperScissorsGame(rps_moves[move:], rounds - 1):
-                yield [rps_moves[move]] + outcome
-    else:
-        yield []
-            
+for sequence in rockPaperScissorsGame(possibleMoves, rounds):
+    print(sequence)
 
-rps_moves = ["R", "P", "S"]
-rounds = 3
-
-for options in rockPaperScissorsGame(rps_moves, rounds):
-    print(options)
-    
     
