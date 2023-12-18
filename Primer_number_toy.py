@@ -9,16 +9,23 @@
 # If x is divisible by any of these numbers, then it is not prime. If x is not divisible by any of these numbers, then it is prime.
 primes = list(range(1, 101))
 
-x = 17
+x = 97
 def primeNumberFunction(x):
-    prime = 1
-    for divisor in range(2, 10):
-        if x != divisor and x % divisor == 0:
+    x_sqrt = x ** 0.5
+    x_sqrt2 = int(x_sqrt)
+    if x == 0:
+        return "False"
+    elif x == 2:
+        return "True"
+    
+    for prime in range(2, (x-1)):
+        if x != prime and x % prime == 0:
             return "False"
-        elif (x / x == 1) or (x / 1 == x):
-            return prime == x
-        elif x / prime != 1:
+        elif x % x_sqrt2 == 0:
+            return "False" 
+        else:
             return "True"
-    
-    
+        
+#x_sqrt = x ** 0.5   
+  
 print(primeNumberFunction(x))
