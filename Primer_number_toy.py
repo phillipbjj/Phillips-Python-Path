@@ -20,8 +20,8 @@ def primeNumberFunction(x):
     elif x % 2 == 0:
         return "False"
     else:   
-        for prime in range(3, (x_sqrt + 1), 2):
-            if x % prime == 0:
+        for odd in range(3, (x_sqrt + 1), 2):
+            if x % odd == 0:
                 return "False"
         return "True"
 print(primeNumberFunction(x))
