@@ -1,12 +1,19 @@
 
 mathProblems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
+variableCheck = any(problem.isalpha() for problem in mathProblems)
 def arithmetic_arranger(mathProblems):
     if len(mathProblems) > 5:
-        return "Too many problems"
-    elif any("*" in mathProblems or "/" in mathProblems for problem in mathProblems):
-        return "Only addition or subtraction"
+        return "Error: Too many problems."
+    elif any("*" in mathProb or "/" in mathProb for mathProb in mathProblems):
+        return "Error: Operator must be '+' or '-'."
+    elif variableCheck == True:
+        return "Error: Numbers must only contain digits."
     else:
-        return print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3])
+        for prob in mathProblems:
+            if len(mathProblems[prob]) > 4:
+                return "Error: Numbers cannot be more than four digits"
+    #else:
+    return print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3])
         #for problem in mathProblems[0:]:
 
 arithmetic_arranger(mathProblems)
