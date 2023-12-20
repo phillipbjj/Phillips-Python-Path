@@ -1,5 +1,6 @@
 
 mathProblems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
+#mathProblems = ["150 + 50", "107 + 1337", "123 + 1", "36 - 24"]
 variableCheck = any(problemStr.isalpha() for problem in mathProblems for problemStr in problem)
 
 def arithmetic_arranger(mathProblems):
