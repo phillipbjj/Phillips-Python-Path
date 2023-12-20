@@ -19,13 +19,18 @@ def arithmetic_arranger(mathProblems):
     elif variableCheck == True:     
         return "Error: Numbers must only contain digits."
     else:
-        return print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3])    
+        mathProblem_1 = mathProblems[0].split()
+        mathProblem_2 = mathProblems[1].split()
+        mathProblem_3 = mathProblems[2].split()
+        mathProblem_4 = mathProblems[3].split()
+        return print(mathProblem_1[0].rjust(6), "  ",  mathProblem_2[0].rjust(6), "  ",  mathProblem_3[0].rjust(6), "  ",  mathProblem_4[0].rjust(6), '\n' + 
+                    mathProblem_1[1], mathProblem_1[2].rjust(4), "  ", mathProblem_2[1], mathProblem_2[2].rjust(4), "  ", mathProblem_3[1], mathProblem_3[2].rjust(4), "  ", mathProblem_4[1], mathProblem_4[2].rjust(4) + 
+                    '\n' "------","  ","------","  ","------","  ","------")
+                
         
 #print(variableCheck)
 arithmetic_arranger(mathProblems)
         
-        
-    
 quit() 
 print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3]) 
 #print(" ",mathProblems[0],"  ",mathProblems[1],"  ",mathProblems[2],"  ",mathProblems[3])
