@@ -4,7 +4,7 @@ variableCheck = any(problemStr.isalpha() for problem in mathProblems for problem
 
 def arithmetic_arranger(mathProblems):
        
-    for equation in mathProblems:    #checking the entire length not the individual strings
+    for equation in mathProblems:    
         mathStr_long = [mathStr for mathStr in equation.split() if mathStr not in ['+', '-']]
         for mathStr_short in mathStr_long:
             if len(mathStr_short) > 4:
@@ -19,7 +19,7 @@ def arithmetic_arranger(mathProblems):
     elif variableCheck == True:     
         return "Error: Numbers must only contain digits."
     else:
-        return print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3])    #doesnt print anything
+        return print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3])    
         
 #print(variableCheck)
 arithmetic_arranger(mathProblems)
