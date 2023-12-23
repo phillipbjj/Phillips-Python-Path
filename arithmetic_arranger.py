@@ -33,21 +33,22 @@ def arithmetic_arranger(mathProblems, showAnswers = False):
             answer_4 = []
             problemsAndAnswers = [(mathProblem_1, answer_1), (mathProblem_2, answer_2), (mathProblem_3, answer_3), (mathProblem_4, answer_4)]
             for probs, answers in problemsAndAnswers:#[mathProblem_1, mathProblem_2, mathProblem_3, mathProblem_4]:
-                if probs[1] == '+':
+                if '+' in probs:
                     answer = int(probs[0]) + int(probs[2])
-                elif probs[1] == '-':
-                    answer =  int(probs[0]) - int(probs[2])
                     answers.append(answer)
-                    stringAnswer.
-                
-            stringAnswer_1 = ' '.join(map(str, answer_1))
-            stringAnswer_2 = ' '.join(map(str, answer_2))
-            stringAnswer_3 = ' '.join(map(str, answer_3))
-            stringAnswer_4 = ' '.join(map(str, answer_4))
+                elif '-' in probs:
+                    answer = int(probs[0]) - int(probs[2])
+                    answers.append(answer)
+            strAnswer_1 = [str(i) for i in answer_1] 
+            strAnswer_2 = [str(i) for i in answer_2]
+            strAnswer_3 = [str(i) for i in answer_3]
+            strAnswer_4 = [str(i) for i in answer_4]
+             
         return print(mathProblem_1[0].rjust(6), "  ",  mathProblem_2[0].rjust(6), "  ",  mathProblem_3[0].rjust(6), "  ",  mathProblem_4[0].rjust(6), '\n' + 
                     mathProblem_1[1], mathProblem_1[2].rjust(4), "  ", mathProblem_2[1], mathProblem_2[2].rjust(4), "  ",
                     mathProblem_3[1], mathProblem_3[2].rjust(4), "  ", mathProblem_4[1], mathProblem_4[2].rjust(4) +  
-                    '\n' "------","  ","------","  ","------","  ","------", '\n', stringAnswer.rjust(4))#, answer_2[0], answer_3[0], answer_4[0])
+                    '\n' "------","  ","------","  ","------","  ","------", '\n', strAnswer_1[0].rjust(5), "  " +
+                     strAnswer_2[0].rjust(7), "  ", strAnswer_3[0].rjust(6), "  ", strAnswer_4[0].rjust(6))
 
     
               
