@@ -15,10 +15,11 @@ kiwi = ["aeiou"]
 #def commonCharacters(apples):
 fruitBasket = {}
 apples = ["apepilou"]
-for fruit in apples:
-	fruitBasket[fruit] = fruitBasket.get(fruit, 0) + 1
+bananas = ["aebinonu"]
+for fruit, fruit2 in apples, bananas:
+        for juice, juice2 in fruit, fruit2:
+	        fruitBasket[juice] = fruitBasket.get(juice, 0) + 1
 	
-
 print(fruitBasket)
 
 #commonCharacters(apples)
