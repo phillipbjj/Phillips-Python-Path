@@ -7,17 +7,28 @@
 #Extra credit: Extend your function to handle more than two input strings.
 #commonCharacters
 
+#apples = ["apepilou"]
+#bananas = ["aebinonu"]
+#kiwi = ["aeiou"]
+
+
 apples = ["apepilou"]
 bananas = ["aebinonu"]
-kiwi = ["aeiou"]
-
-#def commonCharacters(apples):
 fruitBasket = {}
-apples = ["apepilou"]
-for fruit in apples:
-	fruitBasket[fruit] = fruitBasket.get(fruit, 0) + 1
-	
+fruitCase = {}
+def commonCharacters(apples, bananas):	
+	for fruit in apples:
+		for juice in fruit:
+			fruitBasket[juice] = fruitBasket.get(juice, 0) + 1		
+	for fruit2 in bananas:
+		for juice2 in fruit2:
+			fruitCase[juice2] = fruitCase.get(juice2, 0) + 1
+	for key in fruitBasket, fruitCase:
+		if 
+		
 
-print(fruit)
+print(commonCharacters(apples, bananas))
+print(fruitBasket)
+print(fruitCase)
 
 #commonCharacters(apples)
