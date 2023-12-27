@@ -37,8 +37,8 @@ def commonCharacters(apples, bananas):
 			commonLetters.append(key)
 		else:
 			continue
-	
-	bigDog = ["".join(commonLetters)]
+	bigDog = f"{commonLetters}"
+	#bigDog = ["".join(commonLetters)]
 	return bigDog
 
 print(commonCharacters(apples, bananas))

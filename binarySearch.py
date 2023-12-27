@@ -1,4 +1,4 @@
-# Given a sorted list, find the index of an element
+"""# Given a sorted list, find the index of an element
 # using a binary search algorithm.
 #
 # Example usage:
@@ -11,4 +11,16 @@
 
 def binarySearch(array, target) {
   # write your algorithm logic here
-};
+}"""
+
+def binarySearch(array, target):
+    for number in array:
+        if number == target:
+            return array.index(number)
+        
+    
+    return "Null"
+        
+index = binarySearch([1, 2, 3, 4, 5], 4)
+#index = binarySearch([1, 2, 3, 4, 5], 8)
+print(index)  
