@@ -13,9 +13,9 @@
 
 def binarySearch(array, target, first = None, last = None):
   
-  if first == None:
+  if first is None:
     first = 0
-  if last == None:
+  if last is None:
     last = len(array) - 1
 
   mid = (first + last) // 2
