@@ -11,39 +11,24 @@
   # write your algorithm logic here
 #}
 
-"""def binary_search(nums,target,low,high):
-  if low > high:
-    return False
-  else:
-    mid = (low + high)//2
-    if nums[mid] == target:
-      return True
-    elif nums[mid] < target:
-      return binary_search(nums,target,mid+1,high)
-    else:
-      return binary_search(nums,target,low,mid-1)
-    nums = [2,5,7,11,14,21,27,30,36]
-target = 27
+def binarySearch(array, target, first = None, last = None):
+  
+  if first == None:
+    first = 0
+  if last == None:
+    last = len(array) - 1
 
-print(binary_search(nums,target,0,len(nums)-1))
-# Output: True
-
-target = 38
-print(binary_search(nums,target,0,len(nums)-1))
-# Output: False """
-
-def binarySearch(array, target):
-  first = array[0]
-  last = len(array) - 1
   mid = (first + last) // 2
 
   if array[mid] == target:
-    return array.index(mid)
-  elif 
-        
+    return mid
+  else:
+    if array[mid] < target:
+      return binarySearch(array, target, mid + 1, last)
+    if array[mid] > target:
+      return binarySearch(array, target, last, mid - 1) 
     
   return "Null"
         
-index = binarySearch([1, 2, 3, 4, 5], 4)
-#index = binarySearch([1, 2, 3, 4, 5], 8)
+index = binarySearch([1, 2, 3, 4, 5],  4)
 print(index)  
