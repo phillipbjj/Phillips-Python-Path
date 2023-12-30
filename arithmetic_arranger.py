@@ -1,30 +1,30 @@
 
-mathProblems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
-#mathProblems = ["150 + 50", "107 + 1337", "123 + 1", "36 - 24"]
-variableCheck = any(problemStr.isalpha() for problem in mathProblems for problemStr in problem)
+problems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
 
-def arithmetic_arranger(mathProblems, showAnswers = False):
 
-    for equation in mathProblems:    
+def arithmetic_arranger(problems, showAnswers = False):
+
+    variableCheck = any(problemStr.isalpha() for problem in problems for problemStr in problem)
+    for equation in problems:    
         mathStr_long = [mathStr for mathStr in equation.split() if mathStr not in ['+', '-']]
         for mathStr_short in mathStr_long:
             if len(mathStr_short) > 4:
                 return "Error: Numbers cannot be more than four digits"
             
-    if len(mathProblems) > 5:       
+    if len(problems) > 5:       
         return "Error: Too many problems."
     
-    elif any("*" in mathProb or "/" in mathProb for mathProb in mathProblems):
+    elif any("*" in mathProb or "/" in mathProb for mathProb in problems):
         return "Error: Operator must be '+' or '-'."
     
     elif variableCheck == True:     
         return "Error: Numbers must only contain digits."
     
     else:
-        mathProblem_1 = mathProblems[0].split()
-        mathProblem_2 = mathProblems[1].split()
-        mathProblem_3 = mathProblems[2].split()
-        mathProblem_4 = mathProblems[3].split()
+        mathProblem_1 = problems[0].split()
+        mathProblem_2 = problems[1].split()
+        mathProblem_3 = problems[2].split()
+        mathProblem_4 = problems[3].split()
         
         if showAnswers:
             answer_1 = []
@@ -32,7 +32,7 @@ def arithmetic_arranger(mathProblems, showAnswers = False):
             answer_3 = []
             answer_4 = []
             problemsAndAnswers = [(mathProblem_1, answer_1), (mathProblem_2, answer_2), (mathProblem_3, answer_3), (mathProblem_4, answer_4)]
-            for probs, answers in problemsAndAnswers:#[mathProblem_1, mathProblem_2, mathProblem_3, mathProblem_4]:
+            for probs, answers in problemsAndAnswers:
                 if '+' in probs:
                     answer = int(probs[0]) + int(probs[2])
                     answers.append(answer)
@@ -52,17 +52,8 @@ def arithmetic_arranger(mathProblems, showAnswers = False):
 
     
               
-arithmetic_arranger(mathProblems, True)
+arithmetic_arranger(problems, True)
         
-quit() 
-print(mathProblems[0], mathProblems[1], mathProblems[2], mathProblems[3]) 
-#print(" ",mathProblems[0],"  ",mathProblems[1],"  ",mathProblems[2],"  ",mathProblems[3])
-stop = 4
-#print()
-strippedProblems = mathProblems[0].split()
-print(strippedProblems[0].rjust(6))
-print(strippedProblems[1], strippedProblems[2].rjust(6))
-print("------","","------","","------","","------")
 
 
 
