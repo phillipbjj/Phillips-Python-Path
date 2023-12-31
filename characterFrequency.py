@@ -22,7 +22,8 @@ def characterFrequency(string):
     #alphabeticalLetterDict = sorted(letterDict)
     organizedList = []
     for single in letterDict:
-        if 
+        if [single] > [single]:
+            organizedList.append(single)
         
     
 
