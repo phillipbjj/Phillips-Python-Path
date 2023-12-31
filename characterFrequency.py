@@ -19,7 +19,18 @@ def characterFrequency(string):
     for letter in string:
         for single in letter:
             letterDict[single] = letterDict.get(single, 0) + 1
-            return  letterDict
+    #alphabeticalLetterDict = sorted(letterDict)
+    organizedList = []
+    for single in letterDict:
+        if 
+        
+    
+
+    #organizedList = [[single] for single in letterDict]
+
+
+
+    return organizedList #letterDict #alphabeticalLetterDict
 
 
 print(characterFrequency('mississippi'))
