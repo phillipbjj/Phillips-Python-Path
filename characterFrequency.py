@@ -16,24 +16,29 @@
 
 def characterFrequency(string):
     letterDict = {}
+    organizedList = []
     for letter in string:
         for single in letter:
             letterDict[single] = letterDict.get(single, 0) + 1
-    for a, (key1, value1) in letterDict.items():    #i is index, key1/value1 are keys & values of current tuple
-        for b, (key2, value2) in letterDict.items():    #j is index, key2/value2 are keys & values of every other tuple
-            if a == b:
-                continue
-            
-
-   
-
-        
+    while True:
+        for key1, value1 in letterDict.items():    #i is index, key1/value1 are keys & values of current tuple
+            for key2, value2 in letterDict.items():    #j is index, key2/value2 are keys & values of every other tuple
+                if key1 == key2:
+                    continue
+                
+                if value1 > value2:
+                    if key1 < key2:
+                        return organizedList.append((key1, value1))
+                    elif key1 > key2:
+                        return organizedList.append((key2, value2))
+                elif value1 < value2:
+                    
+        if not organizedList:
+            break
+                    
     #organizedList = [[single, letterDict[single]] for single in letterDict]
 
-    
-
-    
-    return letterDict.items() #organizedList[] 
+    return  organizedList
 
 
 print(characterFrequency('mississippi'))
