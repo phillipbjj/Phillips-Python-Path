@@ -18,22 +18,21 @@
 
 def characterFrequency(string):
     letterDict = {}
-    organizedList = []
     for letter in string:
         for single in letter:
             letterDict[single] = letterDict.get(single, 0) + 1
-        for key1, value1 in letterDict.items():    
-            for key2, value2 in letterDict.items():    
-                if key1 == key2:
-                    continue
-                
-                if value1 > value2 or (value1 == value2 and key1 < key2):
-                        organizedList.append((key1, value1))
-                    
-                elif value1 < value2 or (value1 == value2 and key1 > key2):
-                        organizedList.append((key2, value2))
-                        
-                
+            
+    organizedList = [[key, value] for key, value in letterDict.items()]
+     
+    for a in range(len(organizedList)):
+        min_index = a
+        for b in range(a+1, len(organizedList)):          
+            if organizedList[min_index][1] < organizedList[b][1]:
+                min_index = b
+            elif organizedList[min_index][1] == organizedList[b][1] and organizedList[min_index][0] > organizedList[b][0]:
+                min_index = b
+        organizedList[a], organizedList[min_index] = organizedList[min_index], organizedList[a]
+                      
     return  organizedList
 
 print(characterFrequency('mississippi'))
