@@ -24,5 +24,19 @@ Example usage:
 bubbleSort([2, 1, 3]); # yields [1, 2, 3]
 '''
 # Feel free to add helper functions if needed.
-#def bubbleSort(array): 
-  # Your code here.
+
+#freqList[j], freqList[j + 1] = freqList[j + 1], freqList[j]
+
+def bubbleSort(array): 
+    numberSpot = 0
+    nextNumber = numberSpot + 1
+    for number in range(len(array)):
+        if array[numberSpot] > number + 1:
+            array[number + 1] = numberSpot
+
+
+    return array
+
+
+print(bubbleSort([2, 1, 3]))
+#print(bubbleSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
