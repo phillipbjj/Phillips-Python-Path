@@ -13,15 +13,15 @@
 #  return result;
 #};
 #organizedList = [[single, letterDict[single]] for single in letterDict]
- #i is index, key1/value1 are keys & values of current tuple
- #j is index, key2/value2 are keys & values of every other tuple
-
+ #a is index, key1/value1 are keys & values of current tuple
+ #b is index, key2/value2 are keys & values of every other tuple
+#the letter variable still just goes by letter because string's aren't indexed by the word 
+# it's always by the individual character
 def characterFrequency(string):
     letterDict = {}
     # Counts letters within the string and adds to dictionary
     for letter in string:
-        for single in letter:
-            letterDict[single] = letterDict.get(single, 0) + 1
+            letterDict[letter] = letterDict.get(letter, 0) + 1
     # Convert the dictionary to a list of tuples        
     organizedList = [[key, value] for key, value in letterDict.items()]
     # Sort the list of tuples using selection sort 
