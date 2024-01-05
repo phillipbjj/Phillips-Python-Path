@@ -60,7 +60,7 @@ def bubbleSort(array):
     nextNumber = 0
     bubbling = False
         
-    for number in range(len(array) - 1):
+    for number in array[0:]:
         if number == number:
                 continue
             
@@ -73,7 +73,7 @@ def bubbleSort(array):
                 biggestNum = number + 1
                 nextNumber = biggestNum + 1
                 
-    array[biggestNum] = array[biggestNum + 1] # = array[biggestNum]
+    #array[biggestNum] = array[biggestNum + 1] # = array[biggestNum]
     #while bubbling:
 
     return array
