@@ -45,7 +45,8 @@ We then reduce N by 1 and repeat Step 1 until we have N = 1."""
     for each index i in [0..R-1] // the 'unsorted region', O(N)
       if A[i] > A[i+1] // these two are not in non-decreasing order
         swap(a[i], a[i+1]) // swap them in O(1)
-Comparison and swap require time that is bounded by a constant, let's call it c. Then, there are two nested loops in (the standard) Bubble Sort. The outer loop runs for exactly N-1 iterations. But the inner loop runs get shorter and shorter:
+Comparison and swap require time that is bounded by a constant, let's call it c. Then, there are two nested loops in (the standard) Bubble Sort. 
+The outer loop runs for exactly N-1 iterations. But the inner loop runs get shorter and shorter:
 
 When R=N-1, (N−1) iterations (of comparisons and possibly swaps),
 When R=N-2, (N−2) iterations,
@@ -61,13 +62,11 @@ def bubbleSort(array):
     bubbling = False
         
     for number in array[0:]:
-        if number == number:
-                continue
-            
-        if array[biggestNum] > number + 1:
+        if array[number] > array[number+1]:
                 array[biggestNum] = number + 1
                 biggestNum = number + 1
                 nextNumber = biggestNum + 1
+                return bubbleSort(array)
         elif array[biggestNum] < number + 1:
                 array[biggestNum] = array[biggestNum + 1]
                 biggestNum = number + 1
