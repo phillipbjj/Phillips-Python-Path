@@ -25,12 +25,10 @@ for each unsorted element X
 def insertionSort(array):
     
     for number in range(len(array)):
-        insertionHere = array[0]
+        insertionHere = array[number]
         for insert in range(0, len(array) - number - 1):
             if array[insert] > insertionHere:
                 array[insert + 1] = array[insert]
-            elif array[insert] < insertionHere:
-                array[insert] = array[insert + 1]
             #else:
                 #break
         insertionHere = array[insert + 1]
