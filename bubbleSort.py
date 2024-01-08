@@ -57,20 +57,12 @@ Thus, the total number of iterations = (N−1)+(N−2)+...+1 = N*(N−1)/2 (deri
 Total time = c*N*(N−1)/2 = O(N^2)."""
 
 def bubbleSort(array): 
-    biggestNum = 0
-    nextNumber = 0
-    bubbling = False
-        
-    for number in array[0:]:
-        if array[number] > array[number+1]:
-                array[biggestNum] = number + 1
-                biggestNum = number + 1
-                nextNumber = biggestNum + 1
-                return bubbleSort(array)
-        elif array[biggestNum] < number + 1:
-                array[biggestNum] = array[biggestNum + 1]
-                biggestNum = number + 1
-                nextNumber = biggestNum + 1
+
+    for number in range(len(array)):
+        for bubble in range(0, len(array) - number - 1):
+                if array[bubble] > array[bubble + 1]:
+                     array[bubble], array[bubble + 1] = array[bubble + 1], array[bubble]
+                
                 
     #array[biggestNum] = array[biggestNum + 1] # = array[biggestNum]
     #while bubbling:
@@ -78,5 +70,5 @@ def bubbleSort(array):
     return array
 
 
-print(bubbleSort([2, 1, 3]))
-#print(bubbleSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
+#print(bubbleSort([2, 1, 3]))
+print(bubbleSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
