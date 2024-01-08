@@ -63,12 +63,7 @@ def bubbleSort(array):
                 if array[bubble] > array[bubble + 1]:
                      array[bubble], array[bubble + 1] = array[bubble + 1], array[bubble]
                 
-                
-    #array[biggestNum] = array[biggestNum + 1] # = array[biggestNum]
-    #while bubbling:
-
     return array
-
 
 #print(bubbleSort([2, 1, 3]))
 print(bubbleSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
