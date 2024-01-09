@@ -23,16 +23,18 @@ for each unsorted element X
     break loop and insert X here  """  
 
 def insertionSort(array):
-    
-    for number in range(len(array)):
+    clawMachine = array[0]
+    for number in range(1, len(array)):
         insertionHere = array[number]
         for insert in range(0, len(array) - number - 1):
             if array[insert] > insertionHere:
-                array[insert + 1] = array[insert]
-            #else:
-                #break
-        insertionHere = array[insert + 1]
+                array[insert] = insertionHere 
+                
+            else:
+                break
+        array[insert + 1] = insertionHere
+       
 
-    return array
+    return array 
 print(insertionSort([6, 2, 10, 7]))
 #print(insertionSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
