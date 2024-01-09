@@ -5,6 +5,13 @@
  * It takes each element from the input and finds the spot, up to the current point,
  * where that element belongs. It does this until it gets to the end of the array.
 */"""
+#The outer loop executes N−1 times, that's quite clear.
+#But the number of times the inner-loop is executed depends on the input:
+#In best-case scenario, the array is already sorted and (a[j] > X) is always false
+#So no shifting of data is necessary and the inner loop runs in O(1),
+#In worst-case scenario, the array is reverse sorted and (a[j] > X) is always true
+#Insertion always occur at the front of the array and the inner loop runs in O(N).
+#Thus, the best-case time is O(N × 1) = O(N) and the worst-case time is O(N × N) = O(N2).
 """method insertionSort(array A[], integer N)
   for i in [1..N-1] // O(N)
     let X be A[i] // X is the next item to be inserted into A[0..i-1]
@@ -21,18 +28,28 @@ for each unsorted element X
     if current element j > X
       move sorted element to the right by 1
     break loop and insert X here  """  
+"""N = len(A)
+    for i in range(1, N): # O(N)
+        X = A[i] # X is the item to be inserted
+        j = i-1
+        while j >= 0 and A[j] > X: # can be fast or slow
+            A[j+1] = A[j] # make a place for X
+            j -= 1
+        A[j+1] = X # index j+1 is the insertion point
+    return A"""
 
 def insertionSort(array):
-    clawMachine = array[0]
+
     for number in range(1, len(array)):
         insertionHere = array[number]
+        insert = number - 1
         for insert in range(0, len(array) - number - 1):
             if array[insert] > insertionHere:
-                array[insert] = insertionHere 
-                
+                array[insert + 1] = array[insert]
+                insert -= 1
             else:
                 break
-        array[insert + 1] = insertionHere
+        array[insert + 1] = insertionHere  
        
 
     return array 
