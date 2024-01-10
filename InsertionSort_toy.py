@@ -52,3 +52,12 @@ def insertionSort(array):
     return array 
 #print(insertionSort([6, 2, 10, 7]))
 print(insertionSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
+
+"""This algorithm sorts the array in ascending order by repeatedly finding the minimum element 
+from the unsorted part and putting it at the beginning of the sorted part.
+The time complexity of this algorithm is O(n^2) where n is the number of elements in the array.
+This makes it less efficient on large lists, and generally performs worse than the similar selection sort. 
+However, insertion sort provides several advantages such as simple implementation, efficient for small data sets, 
+more efficient in practice than most other simple quadratic algorithms 
+such as selection sort or bubble sort, adaptive, stable, and in-place.
+It is also used in more advanced algorithms like quicksort and shellsort as a subroutine for sorting small arrays."""
