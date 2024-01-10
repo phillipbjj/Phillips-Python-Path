@@ -43,15 +43,12 @@ def insertionSort(array):
     for number in range(1, len(array)):
         insertionHere = array[number]
         insert = number - 1
-        for insert in range(0, len(array) - number - 1):
-            if array[insert] > insertionHere:
-                array[insert + 1] = array[insert]
-                insert -= 1
-            else:
-                break
+        while insert >= 0 and array[insert] > insertionHere:
+              array[insert + 1] = array[insert]
+              insert -= 1
+              
         array[insert + 1] = insertionHere  
-       
 
     return array 
-print(insertionSort([6, 2, 10, 7]))
-#print(insertionSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
+#print(insertionSort([6, 2, 10, 7]))
+print(insertionSort([45, 12, 78, 23, 56, 91, 34, 8, 67, 19]))
