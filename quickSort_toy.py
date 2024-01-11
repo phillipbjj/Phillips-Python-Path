@@ -20,9 +20,10 @@ def quickSort(array):
                 partition1.append(increment) 
             else:
                 partitionP.append(increment)
-    for index in array:
+    """for index in array:
         indexer = index + 1
-        while indexer
+        while indexer <= high:
+            if """
     
     #while unsorted <= high:
                       
