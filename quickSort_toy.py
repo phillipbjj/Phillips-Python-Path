@@ -1,34 +1,31 @@
-def quickSort(array, low = None, high = None):
-    if low is None:
-        low = array[0]
-    if high is None:
-        high = array[-1]
+def quickSort(array):
+    
+    low = array[0]
+    high = array[-1]
     pivot = array[0]
     partition1 = {}
+    partitionP = {}
     partition2 = {}
-    
-    for unsorted in array:
-        indexer = unsorted
-        while indexer <= high:
-            indexer += 1
-        if unsorted > pivot:
-            partition2.get(unsorted, 0) + 1
-        elif unsorted < pivot:
-            partition1.get(unsorted, 0) + 1
-        else:
+    #indexer = array + 1
+    #fried = pivot + 1
+    """ for num in array:
+        if array[num] < pivot:
+            return quickSort(array, pivot, pivot + 1, high)
+        if array[num] > pivot:
+            return quickSort(array, pivot, high, pivot - 1)"""
+    for increment in array:
+            if increment > pivot :
+                #low += 1
+                partition2[increment] = partition2.get(increment, 0) + 1
+                
+            elif increment < pivot:
+                #high += 1
+                partition1[increment] = partition1.get(increment, 0) + 1
+            else:
+                partitionP[increment] = partitionP.get(increment, 0) + 1
+                
             
-        
-        
-
-   
-
-
-
-
-
-
-
-    return low
+    return partitionP
 
 
 print(quickSort([27, 38, 12, 39, 29, 16]))
