@@ -14,10 +14,18 @@ def quickSort(array):
         if array[num] > pivot:
             return quickSort(array, pivot, high, pivot - 1)"""
     for increment in array:
-            if increment > pivot :
-                partition2.append(increment) 
+        indexer = pivot + 1
+        while indexer <= high:
+            if increment > pivot:
+                partition2.append(increment)
+                if increment < indexer:
+                    increment, indexer = indexer, increment
+                    indexer += 1
             elif increment < pivot:
                 partition1.append(increment) 
+                if increment > indexer:
+                    increment, indexer = indexer, increment   
+                    indexer += 1
             else:
                 partitionP.append(increment)
     """for index in array:
