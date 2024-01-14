@@ -15,19 +15,16 @@ def quickSort(array):
             return quickSort(array, pivot, high, pivot - 1)"""
     for increment in array:
         indexer = pivot + 1
-        while indexer <= high:
-            if increment > pivot:
-                partition2.append(increment)
-                if increment < indexer:
-                    increment, indexer = indexer, increment
-                    indexer += 1
-            elif increment < pivot:
-                partition1.append(increment) 
-                if increment > indexer:
-                    increment, indexer = indexer, increment   
-                    indexer += 1
-            else:
-                partitionP.append(increment)
+        if increment > pivot:
+            partition2.append(increment)
+            if increment < indexer:
+                increment, indexer = indexer, increment
+                indexer += 1
+        elif increment < pivot:
+            partition1.append(increment) 
+            
+        else:
+            partitionP.append(increment)s
     """for index in array:
         indexer = index + 1
         while indexer <= high:
