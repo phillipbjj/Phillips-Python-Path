@@ -24,7 +24,11 @@ def quickSort(array):
             partition1.append(increment) 
             
         else:
+<<<<<<< HEAD
             partitionP.append(increment)s
+=======
+            partitionP.append(increment)
+>>>>>>> bd20efbf42249e32d43f930a4a06c5d694d77b25
     """for index in array:
         indexer = index + 1
         while indexer <= high:
