@@ -1,45 +1,30 @@
 def quickSort(array, low = None, high = None):
-    
-    #low = array[0]
-    #high = array[-1]
-    #pivot = array[0]
+
     partition1 = []
     partitionP = []
     partition2 = []
-    #indexer = array + 1
-    #fried = pivot + 1
     if low is None:
-        low = 0
+        low = 1
     if high is None:
-        high = len(array) - 1
-    pivot = (low + high) // 2
-
-    for increment in array:
-        indexer = pivot + 1
-        if increment > pivot:
-            partition2.append(increment)
-            
-            """if increment < indexer:
-                increment, indexer = indexer, increment
-                indexer += 1"""
-        elif increment < pivot:
-            partition1.append(increment) 
-            
-        else:
-            partitionP.append(increment)
-    """for index in array:
-        indexer = index + 1
-        while indexer <= high:
-            if """
-    
-    #while unsorted <= high:
-                      
+        high = len(array)
+    pivot = array[0]
+    indexer = low
+    for increment in range(low, high):
+        if array[increment] > pivot:
+            array[increment], array[indexer] = array[indexer], array[increment]
+            indexer = indexer + 1
+            partition2.append(array[increment])
+        elif array[increment] < pivot:
+            #indexer, array[increment] = array[increment], indexer
+            partition1.append(array[increment])     
+        #else:
+            #partitionP.append(increment)
+    pivot, array[indexer] = array[indexer], pivot                
     return partition2
-
 print(quickSort([27, 38, 12, 39, 29, 16]))
 
 """for each (unsorted) partition
-set first element as pivot
+set low element as pivot
   storeIndex = pivotIndex+1
   for i = pivotIndex+1 to rightmostIndex
     if ((a[i] < a[pivot]) or (equal but 50% lucky))
