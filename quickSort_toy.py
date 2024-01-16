@@ -1,34 +1,32 @@
-def quickSort(array):
+def quickSort(array, low = None, high = None):
     
-    low = array[0]
-    high = array[-1]
-    pivot = array[0]
+    #low = array[0]
+    #high = array[-1]
+    #pivot = array[0]
     partition1 = []
     partitionP = []
     partition2 = []
     #indexer = array + 1
     #fried = pivot + 1
-    """ for num in array:
-        if array[num] < pivot:
-            return quickSort(array, pivot, pivot + 1, high)
-        if array[num] > pivot:
-            return quickSort(array, pivot, high, pivot - 1)"""
+    if low is None:
+        low = 0
+    if high is None:
+        high = len(array) - 1
+    pivot = (low + high) // 2
+
     for increment in array:
         indexer = pivot + 1
         if increment > pivot:
             partition2.append(increment)
-            if increment < indexer:
+            
+            """if increment < indexer:
                 increment, indexer = indexer, increment
-                indexer += 1
+                indexer += 1"""
         elif increment < pivot:
             partition1.append(increment) 
             
         else:
-<<<<<<< HEAD
-            partitionP.append(increment)s
-=======
             partitionP.append(increment)
->>>>>>> bd20efbf42249e32d43f930a4a06c5d694d77b25
     """for index in array:
         indexer = index + 1
         while indexer <= high:
@@ -47,3 +45,9 @@ set first element as pivot
     if ((a[i] < a[pivot]) or (equal but 50% lucky))
       swap(i, storeIndex); ++storeIndex
   swap(pivot, storeIndex-1)"""
+
+""" for num in array:
+        if array[num] < pivot:
+            return quickSort(array, pivot, pivot + 1, high)
+        if array[num] > pivot:
+            return quickSort(array, pivot, high, pivot - 1)"""
