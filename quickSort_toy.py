@@ -12,15 +12,15 @@ def quickSort(array, low = None, high = None):
     for increment in range(low, high):
         if array[increment] > pivot:
             array[increment], array[indexer] = array[indexer], array[increment]
-            indexer = indexer + 1
+            #indexer = indexer + 1
             partition2.append(array[increment])
         elif array[increment] < pivot:
             #indexer, array[increment] = array[increment], indexer
             partition1.append(array[increment])     
         #else:
             #partitionP.append(increment)
-    pivot, array[indexer] = array[indexer], pivot                
-    return partition2
+    #pivot, array[indexer] = array[indexer], pivot                
+    return array
 print(quickSort([27, 38, 12, 39, 29, 16]))
 
 """for each (unsorted) partition
