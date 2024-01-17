@@ -1,26 +1,20 @@
 def quickSort(array, low = None, high = None):
 
     partition1 = []
-    partitionP = []
     partition2 = []
     if low is None:
-        low = 1
+        low = 0
     if high is None:
         high = len(array)
     pivot = array[0]
-    indexer = low
+    indexer = low - 1
     for increment in range(low, high):
-        if array[increment] > pivot:
-            array[increment], array[indexer] = array[indexer], array[increment]
-            #indexer = indexer + 1
+        if array[increment] >= pivot:        
             partition2.append(array[increment])
         elif array[increment] < pivot:
-            #indexer, array[increment] = array[increment], indexer
             partition1.append(array[increment])     
-        #else:
-            #partitionP.append(increment)
-    #pivot, array[indexer] = array[indexer], pivot                
-    return array
+    
+    return partition1
 print(quickSort([27, 38, 12, 39, 29, 16]))
 
 """for each (unsorted) partition
