@@ -11,8 +11,13 @@ var sumArray = function(array) {
 
 def sumArray(array):
     
-    return array
+    for num in array:
+        
+        return array
 
 
 
-print(sumArray())
+print(sumArray([1, -2, 3, 10, -4, 7, 2, -5]))
+"""The idea is to iterate through the array, keeping track of the current sum and
+updating it based on whether adding the next element increases the sum or not.
+The maximum sum encountered during the iteration will be the answer."""
