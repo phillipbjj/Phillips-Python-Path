@@ -10,18 +10,21 @@ var sumArray = function(array) {
 };"""
 
 def sumArray(array):
-    sumCount = array[0]
-    biggestSumArray = []
-    biggestSum = array[0]
-    arraySpan = len(array)
-    for num in array:
-        if (array[num] + array[num + 1]) > sumCount:
-            biggestSumArray.append((array[num] + array[num+1]))
-            sumCount += 1
-
-        return biggestSum
-
-
+    biggestSum = 0
+    currentSum = 0
+    
+    for num in range(len(array)):
+        if num + 1 < len(array) and (array[num] + array[num + 1]) >= biggestSum:
+            biggestSum = array[num] + array[num + 1]
+            currentSum = biggestSum
+            if currentSum <= currentSum + array[num - 1]:  
+                biggestSum = biggestSum + array[num - 1]
+                currentSum = biggestSum
+                if array[num - 2] > 0:
+                    biggestSum = biggestSum + array[num - 2]
+              
+                   
+    return biggestSum
 
 print(sumArray([1, -2, 3, 10, -4, 7, 2, -5]))       #[3, 10, -4, 7, 2]-> 18
 """The idea is to iterate through the array, keeping track of the current sum and
