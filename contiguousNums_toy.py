@@ -14,15 +14,17 @@ def sumArray(array):
     currentSum = 0
     
     for num in range(len(array)):
-        if num + 1 < len(array) and (array[num] + array[num + 1]) >= biggestSum:
-            biggestSum = array[num] + array[num + 1]
-            currentSum = biggestSum
-            if currentSum <= currentSum + array[num - 1]:  
-                biggestSum = biggestSum + array[num - 1]
-                currentSum = biggestSum
-                if array[num - 2] > 0:
-                    biggestSum = biggestSum + array[num - 2]
-              
+    
+        if num + 1 < len(array) and (array[num] + array[num + 1]) > biggestSum:
+            currentSum = array[num] + array[num + 1]
+            biggestSum = currentSum
+            if num - 1 > len(array) and currentSum < currentSum + array[num - 1]:
+                currentSum = currentSum + array[num - 1]
+                biggestSum = currentSum
+            
+        if biggestSum < currentSum:
+            biggestSum = currentSum   
+        currentSum = 0    
                    
     return biggestSum
 
