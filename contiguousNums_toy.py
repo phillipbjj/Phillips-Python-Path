@@ -8,24 +8,32 @@
 // Solved in O(n) time with O(1) memory
 var sumArray = function(array) {
 };"""
-
+#num + 1 < len(array) and num - 1 > len(array) and
 def sumArray(array):
     biggestSum = 0
     currentSum = 0
     
     for num in range(len(array)):
-    
-        if num + 1 < len(array) and (array[num] + array[num + 1]) > biggestSum:
-            currentSum = array[num] + array[num + 1]
-            biggestSum = currentSum
-            if num - 1 > len(array) and currentSum < currentSum + array[num - 1]:
-                currentSum = currentSum + array[num - 1]
-                biggestSum = currentSum
-            
-        if biggestSum < currentSum:
+        #if array[num] > 0:
+        if array[num] >= biggestSum:
+            currentSum = array[num]
+          
+        if num + 1 > len(array) and (array[num] + array[num + 1]) > biggestSum:
+            currentSum = currentSum + array[num + 1]
+            if num + 1 < len(array) and array[num + 1] < 0:
+                if num + 2 < len(array) and (array[num + 1] + array[num + 2]) > 0:
+                    currentSum = currentSum + (array[num + 1] + array[num + 2])
+            #elif num + 1 < len(array) and array[num + 1] > 0: 
+                
+        if num - 1 >= 0 and array[num] + array[num - 1] < biggestSum:
+            currentSum = currentSum + array[num - 1]
+            if array[num - 2] + array[num - 1] > 0:
+                currentSum = currentSum + array[num - 2]   
+                          
+        if biggestSum <= currentSum:
             biggestSum = currentSum   
-        currentSum = 0    
-                   
+        
+        currentSum = 0   
     return biggestSum
 
 print(sumArray([1, -2, 3, 10, -4, 7, 2, -5]))       #[3, 10, -4, 7, 2]-> 18
