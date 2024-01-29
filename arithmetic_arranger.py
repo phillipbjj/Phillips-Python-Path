@@ -1,10 +1,8 @@
-
-problems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
-
-
 def arithmetic_arranger(problems, showAnswers = False):
 
+    #problems = ["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"]
     variableCheck = any(problemStr.isalpha() for problem in problems for problemStr in problem)
+    
     for equation in problems:    
         mathStr_long = [mathStr for mathStr in equation.split() if mathStr not in ['+', '-']]
         for mathStr_short in mathStr_long:
@@ -51,8 +49,8 @@ def arithmetic_arranger(problems, showAnswers = False):
                      strAnswer_2[0].rjust(7), "  ", strAnswer_3[0].rjust(6), "  ", strAnswer_4[0].rjust(6))
 
     
-              
-arithmetic_arranger(problems, True)
+print(arithmetic_arranger(["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"], True))              
+#arithmetic_arranger(problems, True)
         
 
 
