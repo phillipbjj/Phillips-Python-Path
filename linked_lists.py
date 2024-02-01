@@ -4,7 +4,7 @@ class Node:
     data = None
     next_node = None
     
-    def __innit__(self, data):
+    def __init__(self, data):
         self.data = data
         
 """    def __repr__(self):
@@ -12,7 +12,7 @@ class Node:
     
 """class LinkedList:
     "Singly linked list"
-    def __innit__(self):
+    def __init__(self):
         self.head = None
         
     def is_empty(self):

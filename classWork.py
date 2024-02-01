@@ -29,7 +29,7 @@ class bjjFighter:
         self.age = age
         self.weight = weight
         self.height = height
-    def __str__(self):
+    def __repr__(self):
         return f'Rank: {self.rank_color}, Age: {self.age}, Weight: {self.weight} lbs, Height: {self.height} in'
 
 tournamentSignups = {}
@@ -54,11 +54,11 @@ class tournamentOrganizer:
         self.signups = signups
 #Create instances for each athlete  and add the athletes to the dictionary
 
-
+print(bjjFighter('Phillip Dempsey'))
 #tournamentSignups['Phillip Dempsey'] = athlete1
 
 #print(tournamentSignups['Phillip Dempsey'])  
 #Used to print fighters names [keys] along with their values {attributes from class} 
-"""for name, fighter in tournamentSignups.items():   
-    print(f'{name}: {fighter}')  """
+#for name, fighter in tournamentSignups.items():   
+    #print(f'{name}: {fighter}')  
 
