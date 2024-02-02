@@ -62,5 +62,7 @@ def verify_sorted(list):
     
     return list[0] < list[1] and verify_sorted(list[1:])
 
-print(merge_sort([8, 4, 5, 1, 3, 2, 6 ,7]))
-
+testList = [8, 4, 5, 1, 3, 2, 6 ,7]
+mergedList = merge_sort(testList)
+print(mergedList)
+print(verify_sorted(mergedList))
