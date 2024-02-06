@@ -22,9 +22,7 @@ class DoublyLinkedList:
         """
         Adds new Node containing data to head of the list
         Also called prepend
-        Takes O(1) time
-        """
-
+        Takes O(1) time"""
         new_head = Node(data, prev_node=None, next_node=self.head)
 
         if not self.is_empty():
@@ -37,9 +35,7 @@ class DoublyLinkedList:
         """
         Search for the first node containing data that matches the key
         Returns the node or `None` if not found
-        Takes O(n) time
-        """
-
+        Takes O(n) time"""
         current = self.head
 
         while current:
@@ -52,9 +48,7 @@ class DoublyLinkedList:
     def node_at_index(self, index):
         """
         Returns the Node at specified index
-        Takes O(n) time
-        """
-
+        Takes O(n) time"""
         if index >= self.__count:
             raise IndexError('index out of range')
 
@@ -75,9 +69,7 @@ class DoublyLinkedList:
         Inserts a new Node containing data at index position
         Insertion takes O(1) time but finding node at insertion point takes
         O(n) time.
-        Takes overall O(n) time.
-        """
-
+        Takes overall O(n) time."""
         if index >= self.__count:
             raise IndexError('index out of range')
 
@@ -97,9 +89,7 @@ class DoublyLinkedList:
         """
         Removes Node containing data that matches the key
         Returns the node or `None` if key doesn't exist
-        Takes O(n) time
-        """
-
+        Takes O(n) time"""
         current = self.head
         found = False
 
@@ -124,9 +114,7 @@ class DoublyLinkedList:
     def remove_at_index(self, index):
         """
         Removes Node at specified index
-        Takes O(n) time
-        """
-
+        Takes O(n) time"""
         if index >= self.__count:
             raise IndexError('index out of range')
 
@@ -159,8 +147,7 @@ class DoublyLinkedList:
     def __repr__(self):
         """
         Return a string representation of the list.
-        Takes O(n) time.
-        """
+        Takes O(n) time."""
         nodes = []
         current = self.head
         while current:
