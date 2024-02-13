@@ -48,8 +48,8 @@ def arithmetic_arranger(problems, showAnswers = False):
                     '\n' "------","  ","------","  ","------","  ","------", '\n', strAnswer_1[0].rjust(5), "  " +
                      strAnswer_2[0].rjust(7), "  ", strAnswer_3[0].rjust(6), "  ", strAnswer_4[0].rjust(6))
 
-    
-print(arithmetic_arranger(["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"], True))              
+print(arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True))  
+#print(arithmetic_arranger(["50 + 50", "1007 + 1337", "123 + 321", "365 - 24"], True))              
 #arithmetic_arranger(problems, True)
         
 
