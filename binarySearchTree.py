@@ -56,4 +56,16 @@ class BinarySearchTree():
             node.right = self._delete(node.right, node.key) #Needed to recursively deleted the node with the min value from the right subtree.
         return node
         
+    def _min_value(self, node):
+        """to find the smallest value in the right subtree, you need to iterate through the left children of the
+        given node untilyou reach the leftmost (smallest) node in the subtree."""
+        while node.left is not None: #Once the leftmost node is found & node.left becomes None, the loop exits.
+            node = node.left      
+        return node.key     #Returns leftmost node (minimum value) in the given subtree, provides the value that will replace the node after it is deleted
+        
+    def inorder_traversal(self):
+        
+        
+        
+        
         
