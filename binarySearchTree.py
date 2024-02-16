@@ -64,8 +64,22 @@ class BinarySearchTree():
         return node.key     #Returns leftmost node (minimum value) in the given subtree, provides the value that will replace the node after it is deleted
         
     def inorder_traversal(self):
+        result = []         #Stores keys of nodes in sorted order
+        self._inorder_traversal(self.root, result)
+        return result
+    
+    def _inorder_traversal(self, node, result):
         
+        if node:
+            self._inorder_traversal(node.left, result)
+            result.append(node.key)
+            self._inorder_traversal(node.right, result)
+        return result
+
+bst = BinarySearchTree()
+nodes = [50, 30, 20, 40, 70, 60, 80]       
+for node in nodes:
+    bst.insert(node)    #bst is BinarySearchTree() for calling, so I can call functions within it (.insert)
         
-        
-        
+print("Inorder traversal:", bst.inorder_traversal())      
         
