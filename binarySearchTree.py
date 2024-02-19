@@ -4,7 +4,10 @@ class TreeNode():
         self.key = key
         self.left = None
         self.right = None
-        
+    
+    def __str__(self):
+        return str(self.key)
+            
 class BinarySearchTree():
     def __init__(self):
         self.root = None
@@ -82,4 +85,10 @@ for node in nodes:
     bst.insert(node)    #bst is BinarySearchTree() for calling, so I can call functions within it (.insert)
         
 print("Inorder traversal:", bst.inorder_traversal())      
-        
+print("Search for 40:", bst.search(40))       
+bst.delete(40)      #Deletes 40 from BST
+print("Inorder traversal after deleting 40:", bst.inorder_traversal())
+print("Search for 40:", bst.search(40))     #Returns None after deletion
+
+
+
