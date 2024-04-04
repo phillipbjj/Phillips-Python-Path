@@ -61,11 +61,11 @@ Poliwag,0,0,0,0,0,1
 Poliwhirl,0,0,0,0,0,2
 Poliwrath,0,0,3,0,0,0
 Abra,0,0,0,1,0,0
-Kadabra,,0,0,0,2,0,0
+Kadabra,0,0,0,2,0,0
 Alakazam,0,0,0,3,0,0
 Machop,0,1,0,0,0,0
 Machoke,0,1,0,0,0,0
-Machamp,,0,3,0,0,0,0
+Machamp,0,3,0,0,0,0
 Bellsprout,0,1,0,0,0,0
 Weepinbell,0,2,0,0,0,0
 Victreebel,0,3,0,0,0,0
@@ -74,16 +74,16 @@ Tentacruel,0,0,0,0,2,0
 Geodude,0,0,1,0,0,0
 Graveler,0,0,2,0,0,0
 Golem,0,0,3,0,0,0
-Ponyta,,0,0,0,0,0,1
+Ponyta,0,0,0,0,0,1
 Rapidash,0,0,0,0,0,2
-Slowpoke,,1,0,0,0,0,0
+Slowpoke,1,0,0,0,0,0
 Slowbro,0,0,2,0,0,0
 Magnemite,0,0,0,1,0,0
 Magneton,0,0,0,2,0,0
 Farfetch'd,0,1,0,0,0,0
-Doduo, 0,1,0,0,0,0
+Doduo,0,1,0,0,0,0
 Dodrio,0,2,0,0,0,0
-Seel,,0,2,0,0,0,0
+Seel,0,2,0,0,0,0
 Dewgong,0,0,0,0,2,0
 Grimer,1,0,0,0,0,0
 Muk,1,1,0,0,0,0
@@ -151,7 +151,7 @@ Mewtwo,0,0,0,3,0,0
 Mew,3,0,0,0,0,0,
 Chikorita,0,0,0,0,1,0
 Bayleef,0,0,1,0,1,0
-Meganium,0,0,1,0,2,0,
+Meganium,0,0,1,0,2,0
 Cyndaquil,0,0,0,0,0,1
 Quilava,0,0,0,1,0,1
 Typhlosion,0,0,0,3,0,0
@@ -191,7 +191,7 @@ Aipom,0,0,0,0,0,1
 Sunkern,0,0,0,1,0,0
 Sunflora,0,0,0,2,0,0
 Yanma,0,0,0,0,0,1
-Wooper,1,0,0,0,0,0,
+Wooper,1,0,0,0,0,0
 Quagsire,2,0,0,0,0,0
 Espeon,0,0,0,2,0,0
 Umbreon,0,0,0,0,2,0
@@ -207,7 +207,7 @@ Dunsparce,1,0,0,0,0,0
 Gligar,0,0,1,0,0,0
 Steelix,0,0,2,0,0,0
 Snubbull,0,1,0,0,0,0
-Granbull,0,2,0,0,0,0,
+Granbull,0,2,0,0,0,0
 Qwilfish,0,1,0,0,0,0
 Scizor,0,2,0,0,0,0
 Shuckle,0,0,1,0,1,0
@@ -229,13 +229,13 @@ Houndour,0,0,0,1,0,0
 Houndoom,0,0,0,2,0,0
 Kingdra,0,1,0,1,1,0
 Phanpy,1,0,0,0,0,0
-Donphan,0,1,1,0,0,0,
+Donphan,0,1,1,0,0,0
 Porygon2,0,0,0,2,0,0
 Stantler,0,1,0,0,0,0
 Smeargle,0,0,0,0,0,1
 Tyrogue,0,1,0,0,0,0
 Hitmontop,0,0,0,0,2,0
-Smoochum,0,0,0,1,0,0,
+Smoochum,0,0,0,1,0,0
 Elekid,0,0,0,0,0,1
 Magby,0,0,0,0,0,1
 Miltank,0,0,2,0,0,0
@@ -272,7 +272,7 @@ Lombre,0,0,0,0,2,0
 Ludicolo,0,0,0,0,3,0
 Seedot,0,0,1,0,0,0
 Nuzleaf,0,2,0,0,0,0
-Shiftry,0,3,0,0,0,0,
+Shiftry,0,3,0,0,0,0
 Taillow,0,0,0,0,0,1
 Swellow,0,0,0,0,0,2
 Wingull,0,0,0,0,0,1
@@ -305,7 +305,7 @@ Aron,0,0,1,0,0,0
 Lairon,0,0,2,0,0,0
 Aggron,0,0,3,0,0,0
 Meditite,0,0,0,0,0,1
-Medicham,0,0,0,0,0,2,
+Medicham,0,0,0,0,0,2
 Electrike,0,0,0,0,0,1
 Manectric,0,0,0,0,0,2
 Plusle,0,0,0,0,0,1
@@ -333,12 +333,12 @@ Cacturne,0,1,0,1,0,0
 Swablu,0,0,0,0,1,0
 Altaria,0,0,0,0,2,0
 Zangoose,0,2,0,0,0,0
-Seviper,0,1,0,1,0,0,
+Seviper,0,1,0,1,0,0
 Lunatone,0,0,0,2,0,0
 Solrock,0,2,0,0,0,0
 Barboach,1,0,0,0,0,0
 Whiscash,2,0,0,0,0,0
-Corphish,0,1,0,0,0,0,
+Corphish,0,1,0,0,0,0
 Crawdaunt,0,2,0,0,0,0
 Baltoy,0,0,0,0,1,0
 Claydol,0,0,0,0,2,0
@@ -378,14 +378,14 @@ Regirock,0,0,3,0,0,0
 Regice,0,0,0,0,3,0
 Registeel,0,0,2,0,1,0
 Latias,0,0,0,0,3,0
-Latios,0,0,0,3,0,0,
+Latios,0,0,0,3,0,0
 Kyogre,0,0,0,3,0,0
 Groudon,0,3,0,0,0,0
 Rayquaza,0,2,0,1,0,0
 Jirachi,3,0,0,0,0,0
 Deoxys(Normal Form),0,1,0,1,0,1
 Deoxys(Attack Form),0,2,0,1,0,0
-Deoxys(Defense Form),0,0,2,0,1,0,
+Deoxys(Defense Form),0,0,2,0,1,0
 Deoxys(Speed Form),0,0,0,0,0,3
 Turtwig,0,1,0,0,0,0
 Grotle,0,1,1,0,0,0
@@ -419,21 +419,21 @@ Wormadam(Trash Cloak),0,0,1,0,1,0
 Mothim,0,1,0,1,0,0
 Combee,0,0,0,0,0,1
 Vespiquen,0,0,1,0,1,0
-Pachirisu,0,0,0,0,0,1,
+Pachirisu,0,0,0,0,0,1
 Buizel,0,0,0,0,0,1
 Floatzel,0,0,0,0,0,2
-Cherubi,0,0,0,1,0,0,
+Cherubi,0,0,0,1,0,0
 Cherrim,0,0,0,2,0,0
 Shellos,1,0,0,0,0,0
 Gastrodon,2,0,0,0,0,0
-Ambipom,0,0,0,0,0,2,
+Ambipom,0,0,0,0,0,2
 Drifloon,1,0,0,0,0,0
 Drifblim,2,0,0,0,0,0
 Buneary,0,0,0,0,0,1
 Lopunny,0,0,0,0,0,2
 Mismagius,0,0,0,1,1,0
 Honchkrow,0,2,0,0,0,0
-Glameow,0,0,0,0,0,1,
+Glameow,0,0,0,0,0,1
 Purugly,0,0,0,0,0,2
 Chingling,0,0,0,1,0,0
 Stunky,0,0,0,0,0,1
@@ -442,11 +442,11 @@ Bronzor,0,0,1,0,0,0
 Bronzong,0,0,1,0,1,0
 Bonsly,0,0,1,0,0,0
 Mime Jr.,0,0,0,0,1,0
-Happiny,1,0,0,0,0,0,
+Happiny,1,0,0,0,0,0
 Chatot,0,1,0,0,0,0
 Spiritomb,0,0,1,0,1,0
 Gible,0,1,0,0,0,0
-Gabite,0,2,0,0,0,0,
+Gabite,0,2,0,0,0,0
 Garchomp,0,3,0,0,0,0
 Munchlax,1,0,0,0,0,0
 Riolu,0,1,0,0,0,0
@@ -480,7 +480,7 @@ Porygon-Z,0,0,0,3,0,0
 Gallade,0,3,0,0,0,0
 Probopass,0,0,1,0,2,0
 Dusknoir,0,0,1,0,2,0
-Froslass,0,0,0,0,0,2,
+Froslass,0,0,0,0,0,2
 Rotom,0,0,0,1,0,1
 Uxie,0,0,2,0,1,0
 Mesprit,0,1,0,1,1,0
@@ -510,7 +510,7 @@ Samurott,0,0,0,3,0,0
 Patrat,0,1,0,0,0,0
 Watchog,0,2,0,0,0,0
 Lillipup,0,1,0,0,0,0
-Herdier,0,2,0,0,0,0,
+Herdier,0,2,0,0,0,0
 Stoutland,0,3,0,0,0,0
 Purrloin,0,0,0,0,0,1
 Liepard,0,0,0,0,0,2
@@ -551,14 +551,14 @@ Whirlipede,0,0,2,0,0,0
 Scolipede,0,0,0,0,0,3
 Cottonee,0,0,0,0,0,1
 Whimsicott,0,0,0,0,0,2
-Petilil,0,0,0,1,0,0,
+Petilil,0,0,0,1,0,0
 Lilligant,0,0,0,2,0,0
 Basculin,0,0,0,0,0,2
 Sandile,0,1,0,0,0,0
 Krokorok,0,2,0,0,0,0
 Krookodile,0,3,0,0,0,0
 Darumaka,0,1,0,0,0,0
-Darmanitan(Normal Mode),0,2,0,0,0,0,
+Darmanitan(Normal Mode),0,2,0,0,0,0
 Darmanitan(Zen Mode),0,0,0,2,0,0
 Maractus,0,0,0,2,0,0
 Dwebble,0,0,1,0,0,0
@@ -585,14 +585,14 @@ Solosis,0,0,0,1,0,0
 Duosion,0,0,0,2,0,0
 Reuniclus,0,0,0,3,0,0
 Ducklett,1,0,0,0,0,0
-Swanna,0,0,0,0,0,2,
+Swanna,0,0,0,0,0,2
 Vanillite,0,0,0,1,0,0
 Vanillish,0,0,0,2,0,0
 Vanilluxe,0,0,0,3,0,0
 Deerling,0,0,0,0,0,1
 Sawsbuck,0,2,0,0,0,0
 Emolga,0,0,0,0,0,2
-Karrablast,0,1,0,0,0,0,
+Karrablast,0,1,0,0,0,0
 Escavalier,0,2,0,0,0,0
 Foongus,1,0,0,0,0,0
 Amoonguss,2,0,0,0,0,0
@@ -605,7 +605,7 @@ Ferroseed,0,0,1,0,0,0
 Ferrothorn,0,0,2,0,0,0
 Klink,0,0,1,0,0,0
 Klang,0,0,2,0,0,0
-Klinkla0,0,0,0,0,1
+Klinkla,0,0,0,0,0,1
 Eelektrik,0,2,0,0,0,0
 Eelektross,0,3,0,0,0,0
 Elgyem,0,0,0,1,0,0
@@ -615,7 +615,7 @@ Lampent,0,0,0,2,0,0
 Chandelure,0,0,0,3,0,0
 Axew,0,1,0,0,0,0
 Fraxure,0,2,0,0,0,0
-Haxorus,0,3,0,0,0,0,
+Haxorus,0,3,0,0,0,0
 Cubchoo,0,1,0,0,0,0
 Beartic,0,2,0,0,0,0
 Cryogonal,0,0,0,0,2,0
@@ -646,7 +646,7 @@ Terrakion,0,3,0,0,0,0
 Virizion,0,0,0,0,3,0
 Tornadus(Incarnate Form),0,3,0,0,0,0
 Tornadus(Therian Form),0,0,0,0,0,3
-Thundurus(Incarnate Form),0,3,0,0,0,0,
+Thundurus(Incarnate Form),0,3,0,0,0,0
 Thundurus(Therian Form),0,0,0,3,0,0
 Reshiram,0,0,0,3,0,0
 Zekrom,0,3,0,0,0,0
