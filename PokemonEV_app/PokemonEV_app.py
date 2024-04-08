@@ -1,42 +1,36 @@
 from tkinter import *
-#from tkinter import Tk, ttk, Label, Canvas, Scrollbar, Frame, VERTICAL, N, S, E, W
+from PokemonEV_reader import pokemon_data
+from evDisplayFunction import evDisplay
 
-#class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, sync=False, use=None)
-#This line opens the file Pokedex_EVs.txt in read mode ('r'). 
-#The with statement ensures that the file is properly closed after it is no longer needed.
-#with open('Pokedex_EVs.csv', 'r') as file:
-#    reader = csv.reader(file)   #This line creates a csv.reader object that can iterate over lines in the CSV file.
-#    data = list(reader) #This line reads all lines from the CSV file and stores them in the data variable as a list of lists.
+#evDisplay(pokemon_data, 'Venusaur')
 
 #Create the GUI, this line creates a new Tkinter window. root is a common name for the main window in a Tkinter application.
 root = Tk()
-
+# Get the screen width and height
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+# Set the window size to the screen size
+root.geometry(f"{screen_width}x{screen_height}")
 # Create a canvas on the root window and a vertical scrollbar
 canvas = Canvas(root)
 scrollbar = Scrollbar(root, orient=VERTICAL, command=canvas.yview)
+#This line configures the canvas to update the scrollbar whenever the view in the canvas changes.
 canvas.configure(yscrollcommand=scrollbar.set)
 
 # Create a frame on the canvas to hold the labels
 frame = Frame(canvas)
+#The (0, 0) argument is the position of the window, window=frame makes the frame the content of the window,
+#and anchor='nw' positions the window's top-left corner at the given position.
 canvas.create_window((0, 0), window=frame, anchor='nw')
-
-#This line starts a loop that goes through each row in the data list.
-#enumerate is a built-in function that returns both the index of the current item and the item itself.
-for i, row in enumerate(data):  
-    for j, cell in enumerate(row):
-#This line creates a new Tkinter Label widget. The label is added to the root window and its text is set to the current cell's value.
-        label = Label(root, text=cell) 
-#This line positions the label in the root window.
-#The grid method arranges widgets in a grid, and the row and column options specify the label's position in the grid.
-        label.grid(row=i, column=j)
         
-# Update the scrollregion after the canvas and labels have been displayed
-frame.update_idletasks()
-canvas.configure(scrollregion=canvas.bbox('all'))
+#places the canvas to the left and makes it fill the window both horizontally and vertically.
+canvas.pack(side='left', fill='both', expand=True) 
+#places the scrollbar to the right and makes it fill the window vertically.
+scrollbar.pack(side='right', fill='y')
 
-# Layout the canvas and the scrollbar
-canvas.grid(column=0, row=0, sticky=N+S+E+W)
-scrollbar.grid(column=1, row=0, sticky=N+S)
+# Update the scrollregion after the canvas and labels have been displayed
+frame.update_idletasks() #This is necessary to calculate the correct scroll region for the canvas.
+canvas.configure(scrollregion=canvas.bbox('all'))
 
 #This line starts the Tkinter event loop. This loop is what makes the window appear on the screen and respond to user actions.
 root.mainloop()

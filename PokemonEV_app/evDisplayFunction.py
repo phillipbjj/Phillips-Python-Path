@@ -10,4 +10,3 @@ def evDisplay(pokemon_data, pokemon_name):
     else:
         print(f"No data available for {pokemon_name}")
         
-#evDisplay(pokemon_data, 'Venusaur')
