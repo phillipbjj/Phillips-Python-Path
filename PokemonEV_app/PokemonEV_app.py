@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
 
