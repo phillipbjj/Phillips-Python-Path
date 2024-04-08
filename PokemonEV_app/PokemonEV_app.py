@@ -4,9 +4,9 @@ from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
 
 #evDisplay(pokemon_data, 'Venusaur')
-
+#class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, sync=False, use=None)
 #Create the GUI, this line creates a new Tkinter window. root is a common name for the main window in a Tkinter application.
-root = Tk()
+root = Tk(className='PokemonEV App')
 # Get the screen width and height
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
