@@ -17,22 +17,3 @@ def load_data(filename):
     return data
 
 pokemon_data = load_data('Pokedex_EVs.csv')
-#used for serializing (pickling) and deserializing (unpickling) Python objects.
-"""import pickle
-
-def save_data_to_file(data, filename):
-    #This line opens the file with the given filename in binary write mode ('wb')
-    with open(filename, 'wb') as file:
-        #This line uses the pickle.dump function to write the pickled representation of data (in this case, the list of Pokemon objects) to the file.
-        pickle.dump(data, file) 
-def load_data_from_file(filename):
-    #This line opens the file with the given filename in binary read mode ('rb').
-    with open(filename, 'rb') as file:
-        #This line uses the pickle.load function to read the pickled data from the file and return it. The returned data will be a list of Pokemon objects.
-        return pickle.load(file) 
-
-pokemon_data = load_data('Pokedex_EVs.csv')
-save_data_to_file(pokemon_data, 'pokedex_pokemon.pkl')
-
-pokemon_data = load_data_from_file('pokedex_pokemon.pkl')
-"""
