@@ -12,7 +12,7 @@ def load_data(filename):
         #This line uses a list comprehension to create a list of Pokemon objects.
         # For each row in the CSV file, it creates a Pokemon object with the values in the row.
         # The * operator is used to unpack the values from each row.
-        data = [Pokemon(*row) for row in reader]
+        data = {row[0]: Pokemon(*row) for row in reader}
         #This line returns the list of Pokemon objects.
     return data
 
