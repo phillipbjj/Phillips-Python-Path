@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import tkinter as tk
 from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
 
@@ -12,26 +13,23 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 # Set the window size to the screen size
 root.geometry(f"{screen_width}x{screen_height}")
-# Create a canvas on the root window and a vertical scrollbar
-canvas = Canvas(root)
-scrollbar = Scrollbar(root, orient=VERTICAL, command=canvas.yview)
-#This line configures the canvas to update the scrollbar whenever the view in the canvas changes.
-canvas.configure(yscrollcommand=scrollbar.set)
 
-# Create a frame on the canvas to hold the labels
-frame = Frame(canvas)
-#The (0, 0) argument is the position of the window, window=frame makes the frame the content of the window,
-#and anchor='nw' positions the window's top-left corner at the given position.
-canvas.create_window((0, 0), window=frame, anchor='nw')
-        
-#places the canvas to the left and makes it fill the window both horizontally and vertically.
-canvas.pack(side='left', fill='both', expand=True) 
-#places the scrollbar to the right and makes it fill the window vertically.
-scrollbar.pack(side='right', fill='y')
 
-# Update the scrollregion after the canvas and labels have been displayed
-frame.update_idletasks() #This is necessary to calculate the correct scroll region for the canvas.
-canvas.configure(scrollregion=canvas.bbox('all'))
 
-#This line starts the Tkinter event loop. This loop is what makes the window appear on the screen and respond to user actions.
+
+# Create a Listbox and a Scrollbar
+listbox = Listbox(root)
+scrollbar = Scrollbar(root, orient=VERTICAL, command=listbox.yview)
+# Configure the Listbox to update the Scrollbar
+listbox.configure(yscrollcommand=scrollbar.set)
+
+# Add items to the Listbox
+for pokemon_name, pokemon in pokemon_data.items():
+    listbox.insert(END, repr(pokemon))
+
+# Pack the Listbox and the Scrollbar
+listbox.grid(row=0, column=0, sticky='nsew')
+scrollbar.grid(row=0, column=1, sticky='ns')
+
+# This line starts the Tkinter event loop. This loop is what makes the window appear on the screen and respond to user actions.
 root.mainloop()
