@@ -18,7 +18,7 @@ root.geometry(f"{screen_width}x{screen_height}")
 
 
 # Create a Listbox and a Scrollbar
-listbox = Listbox(root)
+listbox = Listbox(root, width=200, height=100)
 scrollbar = Scrollbar(root, orient=VERTICAL, command=listbox.yview)
 # Configure the Listbox to update the Scrollbar
 listbox.configure(yscrollcommand=scrollbar.set)
@@ -27,9 +27,11 @@ listbox.configure(yscrollcommand=scrollbar.set)
 for pokemon_name, pokemon in pokemon_data.items():
     listbox.insert(END, repr(pokemon))
 
-# Pack the Listbox and the Scrollbar
-listbox.grid(row=0, column=0, sticky='nsew')
+# Grid the Listbox and the Scrollbar
+listbox.grid(row=0, column=0, sticky='ns')
 scrollbar.grid(row=0, column=1, sticky='ns')
-
+# Configure the grid to expand properly
+root.grid_rowconfigure(0, weight=1)
+root.grid_columnconfigure(0, weight=1)
 # This line starts the Tkinter event loop. This loop is what makes the window appear on the screen and respond to user actions.
 root.mainloop()
