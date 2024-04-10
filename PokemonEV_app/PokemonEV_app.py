@@ -27,10 +27,12 @@ treeview.configure(yscrollcommand=scrollbar.set, show='headings')
 treeview['columns'] = ('Name', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed', 'Total') 
 for column in treeview['columns']:
     treeview.heading(column, text=column)
+    treeview.column(column, anchor='center')
 
 for pokemon_name, pokemon in pokemon_data.items():
     treeview.insert('', 'end', values=(pokemon.name, pokemon.hp, pokemon.attack, pokemon.defense, pokemon.sp_attack, pokemon.sp_defense, pokemon.speed, pokemon.total))
-    
+
+
 # Grid the Treeview
 treeview.grid(row=0, column=0, sticky='nsew')
 scrollbar.grid(row=0, column=1, sticky='ns')
