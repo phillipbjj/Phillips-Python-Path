@@ -26,10 +26,10 @@ Pikachu,0,0,0,0,0,2,2
 Raichu,0,0,0,0,0,3,3
 Sandshrew,0,0,1,0,0,0,1
 Sandslash,0,0,2,0,0,0,2
-Nidoran♀,1,0,0,0,0,0,1
+Nidoran(Female),1,0,0,0,0,0,1
 Nidorina,2,0,0,0,0,0,2
 Nidoqueen,3,0,0,0,0,0,3
-Nidoran♂,0,1,0,0,0,0,1
+Nidoran(Male),0,1,0,0,0,0,1
 Nidorino,0,2,0,0,0,0,2
 Nidoking,0,3,0,0,0,0,3
 Clefairy,2,0,0,0,0,0,2
@@ -119,7 +119,7 @@ Goldeen,0,1,0,0,0,0,1
 Seaking,0,2,0,0,0,0,2
 Staryu,0,0,0,0,0,1,1
 Starmie,0,0,0,0,0,2,2
-Mr. Mime,0,0,0,0,2,0,2
+Mr.Mime,0,0,0,0,2,0,2
 Scyther,0,1,0,0,0,0,1
 Jynx,0,0,0,2,0,0,2
 Electabuzz,0,0,0,0,0,2,2
@@ -383,10 +383,10 @@ Kyogre,0,0,0,3,0,0,3
 Groudon,0,3,0,0,0,0,3
 Rayquaza,0,2,0,1,0,0,3
 Jirachi,3,0,0,0,0,0,3
-Deoxys(Normal Form),0,1,0,1,0,1,3
-Deoxys(Attack Form),0,2,0,1,0,0,3
-Deoxys(Defense Form),0,0,2,0,1,0,3
-Deoxys(Speed Form),0,0,0,0,0,3,3
+Deoxys(NormalForm),0,1,0,1,0,1,3
+Deoxys(AttackForm),0,2,0,1,0,0,3
+Deoxys(DefenseForm),0,0,2,0,1,0,3
+Deoxys(SpeedForm),0,0,0,0,0,3,3
 Turtwig,0,1,0,0,0,0,1
 Grotle,0,1,1,0,0,0,2
 Torterra,0,2,1,0,0,0,3
@@ -413,9 +413,9 @@ Rampardos,0,2,0,0,0,0,2
 Shieldon,0,0,1,0,0,0,1
 Bastiodon,0,0,2,0,0,0,2
 Burmy,0,0,0,0,1,0,1
-Wormadam(Plant Cloak),0,0,0,0,2,0,2
-Wormadam(Sandy Cloak),0,0,2,0,0,0,2
-Wormadam(Trash Cloak),0,0,1,0,1,0,2
+Wormadam(PlantCloak),0,0,0,0,2,0,2
+Wormadam(SandyCloak),0,0,2,0,0,0,2
+Wormadam(TrashCloak),0,0,1,0,1,0,2
 Mothim,0,1,0,1,0,0,2
 Combee,0,0,0,0,0,1,1
 Vespiquen,0,0,1,0,1,0,2
@@ -441,7 +441,7 @@ Skuntank,2,0,0,0,0,0,2
 Bronzor,0,0,1,0,0,0,1
 Bronzong,0,0,1,0,1,0,2
 Bonsly,0,0,1,0,0,0,1
-Mime Jr.,0,0,0,0,1,0,1
+MimeJr.,0,0,0,0,1,0,1
 Happiny,1,0,0,0,0,0,1
 Chatot,0,1,0,0,0,0,1
 Spiritomb,0,0,1,0,1,0,2
@@ -494,8 +494,8 @@ Cresselia,0,0,0,0,3,0,3
 Phione,1,0,0,0,0,0,1
 Manaphy,3,0,0,0,0,0,3
 Darkrai,0,0,0,2,0,1,3
-Shaymin(Land Form),3,0,0,0,0,0,3
-Shaymin(Sky Form),0,0,0,0,0,3,3
+Shaymin(LandForm),3,0,0,0,0,0,3
+Shaymin(SkyForm),0,0,0,0,0,3,3
 Arceus,3,0,0,0,0,0,3
 Victini,3,0,0,0,0,0,3
 Snivy,0,0,0,0,0,1,1
@@ -558,8 +558,8 @@ Sandile,0,1,0,0,0,0,1
 Krokorok,0,2,0,0,0,0,2
 Krookodile,0,3,0,0,0,0,3
 Darumaka,0,1,0,0,0,0,1
-Darmanitan(Normal Mode),0,2,0,0,0,0,2
-Darmanitan(Zen Mode),0,0,0,2,0,0,2
+Darmanitan(NormalMode),0,2,0,0,0,0,2
+Darmanitan(ZenMode),0,0,0,2,0,0,2
 Maractus,0,0,0,2,0,0,2
 Dwebble,0,0,1,0,0,0,1
 Crustle,0,0,2,0,0,0,2
@@ -644,18 +644,18 @@ Volcarona,0,0,0,3,0,0,3
 Cobalion,0,0,3,0,0,0,3
 Terrakion,0,3,0,0,0,0,3
 Virizion,0,0,0,0,3,0,3
-Tornadus(Incarnate Form),0,3,0,0,0,0,3
-Tornadus(Therian Form),0,0,0,0,0,3,3
-Thundurus(Incarnate Form),0,3,0,0,0,0,3
-Thundurus(Therian Form),0,0,0,3,0,0,3
+Tornadus(IncarnateForm),0,3,0,0,0,0,3
+Tornadus(TherianForm),0,0,0,0,0,3,3
+Thundurus(IncarnateForm),0,3,0,0,0,0,3
+Thundurus(TherianForm),0,0,0,3,0,0,3
 Reshiram,0,0,0,3,0,0,3
 Zekrom,0,3,0,0,0,0,3
-Landorus(Incarnate Form),0,0,0,3,0,0,3
-Landorus(Therian Form),0,0,0,3,0,0,3
-Kyurem(Normal Form),1,1,0,1,0,0,3
-Kyurem(White Form),0,0,0,3,0,0,3
-Kyurem(Black Form),0,3,0,0,0,0,3
+Landorus(IncarnateForm),0,0,0,3,0,0,3
+Landorus(TherianForm),0,0,0,3,0,0,3
+Kyurem(NormalForm),1,1,0,1,0,0,3
+Kyurem(WhiteForm),0,0,0,3,0,0,3
+Kyurem(BlackForm),0,3,0,0,0,0,3
 Keldeo,0,0,0,3,0,0,3
-Meloetta(Aria Form),0,0,0,1,1,1,3
-Meloetta(Pirouette Form),0,1,1,0,0,1,3
+Meloetta(AriaForm),0,0,0,1,1,1,3
+Meloetta(PirouetteForm),0,1,1,0,0,1,3
 Genesect,0,1,0,1,0,1,3

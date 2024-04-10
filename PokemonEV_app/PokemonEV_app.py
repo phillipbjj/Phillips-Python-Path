@@ -15,7 +15,9 @@ screen_height = root.winfo_screenheight()
 root.geometry(f"{screen_width}x{screen_height}")
 
 # Create a Treeview
+style = ttk.Style()
 treeview = ttk.Treeview(root, columns=('name'), show='headings')
+style.configure("Treeview", foreground='white', background="#15292B", font=('Arial', 12))
 """# Set the column headings
 treeview.heading('name', text='Name')
 treeview.heading('type', text='Type')"""
