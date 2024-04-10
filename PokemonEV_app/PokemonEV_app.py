@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import tkinter as tk
+from pokemonevs import Pokemon
 from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
 
@@ -33,10 +34,20 @@ total_listbox = Listbox(root, width=10, height=100, font=('Arial', 12))"""
 
 scrollbar = Scrollbar(root, width=30, orient=VERTICAL, command=treeview.yview)
 # Configure the Listbox to update the Scrollbar
-treeview.configure(yscrollcommand=scrollbar.set)
-# Add items to the Treeview
+treeview.configure(yscrollcommand=scrollbar.set, show='headings')
+# Add items to the Treeview 
+treeview['columns'] = ('name', 'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed', 'total') 
+treeview.heading('name', text='Name')
+treeview.heading('hp', text='HP')
+treeview.heading('attack', text='Attack')
+treeview.heading('defense', text='Defense')
+treeview.heading('sp_attack', text='Sp. Attack')
+treeview.heading('sp_defense', text='Sp. Defense')
+treeview.heading('speed', text='Speed')
+treeview.heading('total', text='Total')
 for pokemon_name, pokemon in pokemon_data.items():
-    treeview.insert('', 'end', values=(pokemon.name))
+    treeview.insert('', 'end', values=(pokemon.name, pokemon.hp, pokemon.attack, pokemon.defense, pokemon.sp_attack, pokemon.sp_defense, pokemon.speed, pokemon.total))
+    
 # Add items to the Listbox
 """for pokemon_name, pokemon in pokemon_data.items():
     name_listbox.insert(END, f"{pokemon.name}")
