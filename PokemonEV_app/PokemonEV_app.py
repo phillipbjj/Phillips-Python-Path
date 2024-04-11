@@ -1,7 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-import tkinter as tk
-from pokemonevs import Pokemon
 from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
 
@@ -24,13 +22,13 @@ scrollbar = Scrollbar(root, width=30, orient=VERTICAL, command=treeview.yview)
 # Configure the Listbox to update the Scrollbar
 treeview.configure(yscrollcommand=scrollbar.set, show='headings')
 # Add columns, headers, & items to the Treeview
-treeview['columns'] = ('NationPokedex#', 'Name', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed', 'Total') 
+treeview['columns'] = ('NationalPokedex#', 'Name', 'HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed', 'Total') 
 for column in treeview['columns']:
     treeview.heading(column, text=column)
     treeview.column(column, anchor='center')
 
 for pokemon_name, pokemon in pokemon_data.items():
-    treeview.insert('', 'end', values=(pokemon.index, pokemon.name, pokemon.hp, pokemon.attack, pokemon.defense, pokemon.sp_attack, pokemon.sp_defense, pokemon.speed, pokemon.total))
+    treeview.insert('', 'end', values=(pokemon.pokedex, pokemon.name, pokemon.hp, pokemon.attack, pokemon.defense, pokemon.sp_attack, pokemon.sp_defense, pokemon.speed, pokemon.total))
 
 
 # Grid the Treeview
