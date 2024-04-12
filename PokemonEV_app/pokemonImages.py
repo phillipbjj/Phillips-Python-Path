@@ -1,5 +1,5 @@
 from pokemonevs import Pokemon 
-pokemonimages.txt = {
+pokemonimagestxt = {
     '#0001': '1.png',
     '#0002': '2.png',
     '#0003': '3.png',
