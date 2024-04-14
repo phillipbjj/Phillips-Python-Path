@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from PokemonEV_reader import pokemon_data
 from evDisplayFunction import evDisplay
+from pokemonImages import pokemon_images
 
 #evDisplay(pokemon_data, 'Venusaur')
 #class tkinter.Tk(screenName=None, baseName=None, className='Tk', useTk=True, sync=False, use=None)
