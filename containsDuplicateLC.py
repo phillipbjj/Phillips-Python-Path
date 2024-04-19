@@ -6,9 +6,9 @@
 def containsDuplicate(nums):
     comparison = {}
     for num in nums:
-        comparison[num] = comparison.get(num, 0) + 1
-        if comparison[num] == 2:
+        if num in comparison:
             return True
+        comparison[num] = 1
     return False
     
     
