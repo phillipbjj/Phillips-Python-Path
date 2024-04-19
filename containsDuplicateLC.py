@@ -9,8 +9,6 @@ def containsDuplicate(nums):
         comparison[num] = comparison.get(num, 0) + 1
         if comparison[num] == 2:
             return True
-        else:
-            continue
     return False
     
     
@@ -20,3 +18,13 @@ def containsDuplicate(nums):
 nums = [0,4,5,0,3,6]
 #nums = [1, 2, 3, 1]
 print(containsDuplicate(nums))
+
+"""def containsDuplicate(nums):
+    comparison = {}
+    for num in nums:
+        comparison[num] = comparison.get(num, 0) + 1
+        if comparison[num] == 2:
+            return True
+        else:
+            continue
+    return False"""
