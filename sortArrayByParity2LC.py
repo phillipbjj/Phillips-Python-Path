@@ -6,11 +6,24 @@
 
 
 def sortArrayByParity2(nums):
+    redirect = {}
+    evenDict = {}
+    oddDict = {}
+    newNums = []
     
-    
-    
-    
-    return None
+    for i in nums:
+        redirect[i] = redirect.get(i)
+       
+    for i in redirect:
+        if i % 2 == 0:
+            newNums.append(i)
+        else:
+        
+        
+            
+        
+                
+    return newNums
 
 
 nums = [4,2,5,7] 
