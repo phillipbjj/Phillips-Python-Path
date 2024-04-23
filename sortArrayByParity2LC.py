@@ -3,35 +3,20 @@
 #Return any answer array that satisfies this condition.
 #Input: nums = [4,2,5,7]     Output: [4,5,2,7]
  
-"""for number in range(len(array)):
-        for bubble in range(0, len(array) - number - 1):
-                if array[bubble] > array[bubble + 1]:
-                     array[bubble], array[bubble + 1] = array[bubble + 1], array[bubble]"""
-
 def sortArrayByParity2(nums):
-    evenDict = {}
-    oddDict = {}
-    newNums = []
-    
-    for index in range(len(nums)):
-        for number in range(len(nums) - index - 1):
-            
-            
-        
-    """for i in nums:
-        if i % 2 == 0:
-            evenDict[i] = evenDict.get(i)
+    even = 0
+    odd = 1
+    size = len(nums)
+    while even < size and odd < size:
+        if nums[even] % 2 == 0:
+            even += 2
+        elif nums[odd] % 2 == 1:
+            odd += 2
         else:
-            oddDict[i] = oddDict.get(i)
-    
-    for i in evenDict:
-        newNums.append(i)
-    for i in oddDict:
-            i = oddDict[i]"""
-        
-    
+            nums[even], nums[odd] = nums[odd], nums[even]
+            even += 2
+            odd += 2
     return nums
-
 
 nums = [4,2,5,7] 
 print(sortArrayByParity2(nums))
