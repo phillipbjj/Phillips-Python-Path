@@ -23,6 +23,8 @@ class Category:
     def deposit(self, amount, description=''):
        # for category in Category:
         #    ledger.append({self.amount} )   #f'NationalPokedex: {self.pokedex}
+        
+        
         pass
 
     def withdraw(self, amount, description): #amount passed in should be stored as negative in the ledger. if overdrawn then return false
