@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Grocery List</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var socket = io();
+
+            socket.on('update_list', function(data) {
+                var list = document.getElementById('grocery-list');
+                list.innerHTML = '';
+                data.items.forEach(function(item) {
+                    var li = document.createElement('li');
+                    li.innerHTML = `${item[1]} (${item[2]}) - <button onclick="deleteItem(${item[0]})">Delete</button>`;
+                    list.appendChild(li);
+                });
+            });
+
+            document.getElementById('add-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var name = document.getElementById('name').value;
+                var quantity = document.getElementById('quantity').value;
+                fetch('/add_item', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({name: name, quantity: quantity})
+                }).then(response => response.json());
+            });
+        });
+
+        function deleteItem(itemId) {
+            fetch(`/delete_item/${itemId}`, {
+                method: 'DELETE'
+            }).then(response => response.json());
+        }
+    </script>
+</head>
+<body>
+    <h1>Grocery List</h1>
+    <form id="add-form">
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="grocery-list">
+        {% for item in items %}
+            <li>{{ item[1] }} ({{ item[2] }}) - <button onclick="deleteItem({{ item[0] }})">Delete</button></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
