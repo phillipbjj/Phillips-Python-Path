@@ -1,44 +1,76 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #f4f4f9;
     margin: 0;
 }
 
 .container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    background: white;
     padding: 20px;
-    width: 400px;
-    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.tabs {
+.container h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+.grocery-list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
-.tab {
-    background-color: #f4f4f4;
+.category {
+    width: 48%;
+}
+
+.category h2 {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item input[type="number"] {
+    width: 50px;
+}
+
+.item button {
+    background: none;
     border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
+    color: red;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.tab.active {
-    background-color: white;
-    border: 1px solid #ddd;
+.add-form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-.list-container {
-    background-color: #f4f4f4;
-    border-radius: 8px;
-   
+.add-form input[type="text"],
+.add-form select {
+    width: calc(100% - 100px);
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.add-form button {
+    width: 80px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
