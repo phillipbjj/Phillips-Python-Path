@@ -1,10 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    background-color: #343541;
+    color: #e0e0e0;
+    margin: 0;
     padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
+    color: #ffffff;
 }
 
 ul {
@@ -15,6 +19,34 @@ ul {
 li {
     padding: 10px;
     margin: 5px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    background-color: #444;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #555;
+    background-color: #555;
+    color: #ffffff;
+}
+
+button {
+    padding: 10px 20px;
+    border: 1px solid #555;
+    background-color: #666;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #777;
 }
