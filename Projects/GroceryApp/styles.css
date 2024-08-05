@@ -1,52 +1,38 @@
-body {
-    background-color: #343541;
+
+    /*background-color: #343541;
     color: #e0e0e0;
     margin: 0;
     padding: 20px;
-    font-family: Arial, sans-serif;
-}
+    font-family: Arial, sans-serif;*/
 
-h1 {
-    text-align: center;
-    color: #ffffff;
-}
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    padding: 10px;
-    margin: 5px;
-    background-color: #444;
-    color: #ffffff;
-    border: 1px solid #555;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-input[type="text"],
-input[type="number"] {
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #555;
-    background-color: #555;
-    color: #ffffff;
-}
-
-button {
-    padding: 10px 20px;
-    border: 1px solid #555;
-    background-color: #666;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #777;
-}
+    body {
+        font-family: Arial, sans-serif; /* Set the font family for the body */
+        margin: 0px; /* Add margin around the body */
+        background-color: #343541;
+        color: #e0e0e0;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #333; /* Set the color of the heading */
+    }
+    
+    ul {
+        list-style-type: none; /* Remove the default list styling */
+        padding: 0; /* Remove the padding from the list */
+    }
+    
+    ul li {
+        margin: 5px 0; /* Add margin between list items */
+    }
+    
+    form {
+        margin-top: 20px; /* Add margin above the form */
+    }
+    
+    input, button {
+        padding: 5px; /* Add padding inside the input fields and button */
+        margin-right: 5px; /* Add margin to the right of the input fields and button */
+    }
+    
