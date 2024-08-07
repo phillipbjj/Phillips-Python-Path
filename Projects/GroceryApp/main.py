@@ -5,15 +5,14 @@ import sqlite3
     
 connect = sqlite3.connect("grocerylist.db")
 cursor = connect.cursor()
-
+#ADD LAST PRICE FOR AFTER PURCHASE OF GROCERIES, CAN BE TURNED INTO A REPRESENTATION MODEL LATER
 """#Created the 2 tables I am using.
 #cursor.execute("CREATE TABLE Food(food TEXT, amount TEXT)")    
 #cursor.execute("CREATE TABLE Nonfood(item TEXT, amount TEXT)")
 #connect.close() #Closes the database connection.
-#connect.commit() #This saves the changes to my database."""
-
+#connect.commit() #This saves the changes to my database.
 cursor.execute("SELECT * FROM grocerylist.")  # Query all rows from the grocerylist table
-rows = cursor.fetchall()
+rows = cursor.fetchall()"""
 
 #Add groceries into one of the 2 categories(tables)
 def add_groceries(category, g_item, amount):    #POST
@@ -27,7 +26,7 @@ def add_groceries(category, g_item, amount):    #POST
     
     connect.commit()
     connect.close()
-
+#Update current groceries list groceries
 def edit_groceries(category, new_g_item, new_amount, current_g_item):   #PUT
     #Need to add api interaction with website for categories
     connect = sqlite3.connect("grocerylist.db")
@@ -39,7 +38,7 @@ def edit_groceries(category, new_g_item, new_amount, current_g_item):   #PUT
     
     connect.commit()
     connect.close()    
-
+#Remove groceries from the list
 def remove_groceries(category, g_item):
     connect = sqlite3.connect("grocerylist.db")
     cursor = connect.cursor()
@@ -51,22 +50,14 @@ def remove_groceries(category, g_item):
     connect.commit()
     connect.close()  
 
-
-
-
-
-
-
-def get_grocery_list(self):
+"""def get_grocery_list(self):
         # Connect to SQLite3 database and retrieve the grocery list
         connect = sqlite3.connect('grocerylist.db')
         cursor = connect.cursor()
         cursor.execute("SELECT * FROM grocerylist")  # Query all rows from the grocerylist table
         rows = cursor.fetchall()  # Fetch all rows from the query result
-        connect.close()  # Close the database connection
+        connect.close()  # Close the database connection"""
 
-#tables = open("/grocerylist.db")
-#print(tables)
 
 
 
