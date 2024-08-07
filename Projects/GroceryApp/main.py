@@ -5,9 +5,10 @@ import sqlite3
     
 connect = sqlite3.connect("grocerylist.db")
 cursor = connect.cursor()
+cursor.execute("SELECT * FROM grocerylist.")  # Query all rows from the grocerylist table
+rows = cursor.fetchall()
+print(rows)
 
-cursor.execute("CREATE TABLE Food(food TEXT, amount TEXT)")
-cursor.execute("CREATE TABLE Nonfood(item TEXT, amount TEXT)")
 #tables = open("/grocerylist.db")
 #print(tables)
 
