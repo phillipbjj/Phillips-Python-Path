@@ -28,13 +28,19 @@ def add_groceries(category, g_item, amount):
         raise ValueError("Invalid category. Must be 'Food' or 'Nonfood'.")
     connect.commit()
     connect.close()
-    
-    """ # Connect to SQLite3 database and insert the new item
-            conn = sqlite3.connect('grocerylist.db')
-            cursor = conn.cursor()
-            cursor.execute("INSERT INTO grocerylist (item, quantity) VALUES (?, ?)", (item, quantity))
-            conn.commit()  # Commit the changes to the database
-            conn.close()  # Close the database connection"""
+
+def edit_groceries(category, new_g_item, new_amount, current_g_item):
+    #Need to add api interaction with website for categories
+    connect = sqlite3.connect("grocerylist.db")
+    cursor = connect.cursor()
+    if category == 'Food':
+        cursor.execute("UPDATE Food SET food = ?, amound = ?,  WHERE food = ?", (new_g_item, new_amount, current_g_item))
+    elif category == 'Nonfood':
+        cursor.execute("UPDATE Nonfood SET item = ?, amount = ?, WHERE item = ?", (new_g_item, new_amount, current_g_item))
+    else:
+        raise ValueError("Invalid category. Must be 'Food' or 'Nonfood'.")
+    connect.commit()
+    connect.close()    
 
 
 def get_grocery_list(self):
