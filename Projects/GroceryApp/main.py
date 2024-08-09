@@ -34,13 +34,11 @@ def main():
             
                 connect = sqlite3.connect("grocerylist.db")
                 cursor = connect.cursor()
-
-                # Fetching data from both Food and Nonfood tables
-                cursor.execute("SELECT food, amount FROM Food")
+                #Fetching data from both Food and Nonfood tables
+                cursor.execute("SELECT * FROM Food")
                 food_data = cursor.fetchall()
-                cursor.execute("SELECT item, amount FROM Nonfood")
+                cursor.execute("SELECT * FROM Nonfood")
                 nonfood_data = cursor.fetchall()
-
                 connect.close()
 
                 # Formatting the data as a JSON response
@@ -49,8 +47,9 @@ def main():
                     'Nonfood': [{'item': item[0], 'amount': item[1]} for item in nonfood_data]
                 }
 
-                self._set_response()  # Set the response status and headers
-                self.wfile.write(json.dumps(response_data).encode('utf-8'))  # Send the JSON data
+                self._set_response()  #Set the response status and headers
+                self.wfile.write(json.dumps(response_data).encode('utf-8'))  # end the JSON data
+                
         #Add groceries into one of the 2 categories(tables)
         def add_groceries(category, g_item, amount):    #POST
             #Need to add api interaction with website for categories
