@@ -22,33 +22,14 @@ def main():
             self.send_header('Content-type', 'application/json')  # Specifies that the content is JSON
             self.end_headers()  # Ends the headers section, ready to send content
         
-        # Handling the GET request to view the webpage and database contents
+        #Handling the GET request to view the webpage and database contents
         def do_GET(self):
-            self.path == '/':  # Check if the root path is requested
-            # Open and read the index.html file
+            #Open and read the index.html file
             with open('index.html', 'rb') as file:
                 self.send_response(200) #Send a 200 OK response
-                self.send_header('Content-type', 'text/html')
+                self.send_header('Content-type', 'text/html') #Set the content type to HTML
                 self.end_headers() # End the headers
-                self.wfile.write(file.read())
-            
-                connect = sqlite3.connect("grocerylist.db")
-                cursor = connect.cursor()
-                #Fetching data from both Food and Nonfood tables
-                cursor.execute("SELECT * FROM Food")
-                food_data = cursor.fetchall()
-                cursor.execute("SELECT * FROM Nonfood")
-                nonfood_data = cursor.fetchall()
-                connect.close()
-
-                # Formatting the data as a JSON response
-                response_data = {
-                    'Food': [{'food': item[0], 'amount': item[1]} for item in food_data],
-                    'Nonfood': [{'item': item[0], 'amount': item[1]} for item in nonfood_data]
-                }
-
-                self._set_response()  #Set the response status and headers
-                self.wfile.write(json.dumps(response_data).encode('utf-8'))  # end the JSON data
+                self.wfile.write(file.read()) #Write the content of the file to the response
                 
         #Add groceries into one of the 2 categories(tables)
         def add_groceries(category, g_item, amount):    #POST
@@ -86,13 +67,7 @@ def main():
             connect.commit()
             connect.close()  
 
-        """def get_grocery_list(self):
-                # Connect to SQLite3 database and retrieve the grocery list
-                connect = sqlite3.connect('grocerylist.db')
-                cursor = connect.cursor()
-                cursor.execute("SELECT * FROM grocerylist")  # Query all rows from the grocerylist table
-                rows = cursor.fetchall()  # Fetch all rows from the query result
-                connect.close()  # Close the database connection"""
+
 
 
 
