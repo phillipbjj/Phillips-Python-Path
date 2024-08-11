@@ -106,3 +106,6 @@ def main():
         print(f'Starting server on port {port}...')  # Logging the server start
         httpd.serve_forever()  # Starting the server loop, which will keep running to handle incoming requests
 
+    run()
+if __name__ == "__main__":
+    main()
