@@ -19,7 +19,9 @@ def main():
         def do_GET(self):
             #Open and read the index.html file
             with open('index.html', 'rb') as file:
-                self.send_response(200, 'text/html')
+                self.send_response(200)
+                self.send_header('Content-type', 'text/html')
+                self.end_headers()
                 self.wfile.write(file.read()) #Write the content of the file to the response
                 
         def do_POST(self):

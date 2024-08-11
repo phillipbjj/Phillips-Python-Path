@@ -1,38 +1,9 @@
+body {
+    background-color: #343541;
+    
+}
 
-    /*background-color: #343541;
-    color: #e0e0e0;
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;*/
-
-
-    body {
-        font-family: Arial, sans-serif; /* Set the font family for the body */
-        margin: 0px; /* Add margin around the body */
-        background-color: #343541;
-        color: #e0e0e0;
-        padding: 20px;
-    }
-    
-    h1 {
-        color: #333; /* Set the color of the heading */
-    }
-    
-    ul {
-        list-style-type: none; /* Remove the default list styling */
-        padding: 0; /* Remove the padding from the list */
-    }
-    
-    ul li {
-        margin: 5px 0; /* Add margin between list items */
-    }
-    
-    form {
-        margin-top: 20px; /* Add margin above the form */
-    }
-    
-    input, button {
-        padding: 5px; /* Add padding inside the input fields and button */
-        margin-right: 5px; /* Add margin to the right of the input fields and button */
-    }
-    
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
