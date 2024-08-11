@@ -1,4 +1,4 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import SimpleHTTPRequestHandler, HTTPServer
 import json
 import sqlite3
 
@@ -8,7 +8,7 @@ import sqlite3
 def main():
     
     #Inherits pythons HTTP handler as a subclass for HTTP operations
-    class GroceryHandler(BaseHTTPRequestHandler):
+    class GroceryHandler(SimpleHTTPRequestHandler):
         
         def _set_response(self, status=200, content_type='application/json'):  # Default status is 200 (OK)
             self.send_response(status)  # Sends the HTTP status code
@@ -16,13 +16,12 @@ def main():
             self.end_headers()  # Ends the headers section, ready to send content
         
         #Handling the GET request to view the webpage and database contents
+        def __init_(self, *args, **kwargs):
+            super().__init__(*args, directory=',/', **kwargs)
+        
         def do_GET(self):
-            #Open and read the index.html file
-            with open('index.html', 'rb') as file:
-                self.send_response(200)
-                self.send_header('Content-type', 'text/html')
-                self.end_headers()
-                self.wfile.write(file.read()) #Write the content of the file to the response
+            super().do_GET()
+
                 
         def do_POST(self):
             content_length = int(self.headers['Content-Length'])
