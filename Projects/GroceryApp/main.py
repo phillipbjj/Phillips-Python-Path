@@ -102,12 +102,13 @@ def main():
             connect.close()  
 
     # Function to start the HTTP server
-    def run(server_class=HTTPServer, handler_class=GroceryHandler, port=8080):
+    def run(server_class=HTTPServer, handler_class=GroceryHandler, port=8000):
         server_address = ('', port)  # Setting up the server to listen on all available IP addresses and the specified port
         httpd = server_class(server_address, handler_class)  # Creating an instance of HTTPServer with the specified address and handler
         print(f'Starting server on port {port}...')  # Logging the server start
         httpd.serve_forever()  # Starting the server loop, which will keep running to handle incoming requests
 
     run()
+    
 if __name__ == "__main__":
     main()

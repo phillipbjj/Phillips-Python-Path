@@ -1,9 +1,8 @@
-body {
+.darkmode {
     background-color: #343541;
-    
+    min-height: 100%
 }
 
 h1 {
-    color: #ffffff;
     text-align: center;
 }
