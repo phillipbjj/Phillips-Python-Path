@@ -5,4 +5,30 @@ body {
 
 h1 {
     text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    
+}
+
+h2 {
+    text-align: left;
+    width: 33%;
+    margin-top: 33%;
+    margin-bottom: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    text-align: left;
+    width: 66%;
+    margin-top: 33%;
+    margin-bottom: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.category {
+    padding: 20px;
+    max-width: 500px;
 }
