@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchGroceryList(); // Fetch the grocery list from the server or localStorage
 
-    // Add event listeners for form submissions
+    // Add event listener for form submission
     document.getElementById('add-item-form').addEventListener('submit', (event) => {
         event.preventDefault();
         addItem();
     });
 });
 
-// Function to fetch the grocery list from the server or localStorage if offline
 function fetchGroceryList() {
     if (navigator.onLine) {
         fetch('/grocerylist')
@@ -23,12 +22,10 @@ function fetchGroceryList() {
     }
 }
 
-// Function to store the grocery list in localStorage
 function storeGroceryListOffline(data) {
     localStorage.setItem('groceryList', JSON.stringify(data));
 }
 
-// Function to fetch the grocery list from localStorage when offline
 function fetchGroceryListOffline() {
     const storedData = localStorage.getItem('groceryList');
     if (storedData) {
@@ -39,19 +36,22 @@ function fetchGroceryListOffline() {
     }
 }
 
-// Function to display the grocery list on the web page
 function displayGroceryList(data) {
     const foodListElement = document.getElementById('food-list');
     const nonFoodListElement = document.getElementById('nonfood-list');
+
+    // Clear any existing list items
     foodListElement.innerHTML = '';
     nonFoodListElement.innerHTML = '';
-    
+
+    // Display Food items
     data.food.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.food}: ${item.amount}`;
         foodListElement.appendChild(li);
     });
 
+    // Display Non-food items
     data.nonfood.forEach(item => {
         const li = document.createElement('li');
         li.textContent = `${item.item}: ${item.amount}`;
@@ -59,7 +59,6 @@ function displayGroceryList(data) {
     });
 }
 
-// Function to add a new item to the grocery list
 function addItem() {
     const category = document.querySelector('input[name="category"]:checked').value;
     const item = document.getElementById('item').value;

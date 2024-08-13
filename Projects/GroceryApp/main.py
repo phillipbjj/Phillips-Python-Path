@@ -60,7 +60,26 @@ def main():
             
             self.remove_groceries(category, g_item)
             self._set_response()
-            self.wfile.write(json.dumps({"message": "Item deleted successfully!"}).encode('utf-8'))    
+            self.wfile.write(json.dumps({"message": "Item deleted successfully!"}).encode('utf-8'))   
+            
+            
+        # Fetching the grocery list from the database
+        def fetch_groceries(self):
+            connect = sqlite3.connect("grocerylist.db")
+            cursor = connect.cursor()
+
+            # Fetch food items
+            cursor.execute("SELECT food, amount FROM Food")
+            food_items = [{'food': row[0], 'amount': row[1]} for row in cursor.fetchall()]
+
+            # Fetch non-food items
+            cursor.execute("SELECT item, amount FROM Nonfood")
+            nonfood_items = [{'item': row[0], 'amount': row[1]} for row in cursor.fetchall()]
+
+            connect.close()
+
+            return {'food': food_items, 'nonfood': nonfood_items}
+             
         #Add groceries into one of the 2 categories(tables)
         def add_groceries(self, category, g_item, amount):    #POST
             #Need to add api interaction with website for categories
