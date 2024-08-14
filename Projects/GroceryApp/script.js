@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetchGroceryList(); // Fetch the grocery list from the server or localStorage
-
-    // Add event listener for form submission
+    fetchGroceryList();
     document.getElementById('add-item-form').addEventListener('submit', (event) => {
         event.preventDefault();
         addItem();
@@ -40,23 +38,23 @@ function displayGroceryList(data) {
     const foodListElement = document.getElementById('food-list');
     const nonFoodListElement = document.getElementById('nonfood-list');
 
-    // Clear any existing list items
     foodListElement.innerHTML = '';
     nonFoodListElement.innerHTML = '';
 
-    // Display Food items
     data.food.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.food}: ${item.amount}`;
-        foodListElement.appendChild(li);
+        addItemToList('food', item.food, item.amount);
     });
 
-    // Display Non-food items
     data.nonfood.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.item}: ${item.amount}`;
-        nonFoodListElement.appendChild(li);
+        addItemToList('nonfood', item.item, item.amount);
     });
+}
+
+function addItemToList(category, item, amount) {
+    const listElement = category === 'food' ? document.getElementById('food-list') : document.getElementById('nonfood-list');
+    const li = document.createElement('li');
+    li.textContent = `${item}: ${amount}`;
+    listElement.appendChild(li);
 }
 
 function addItem() {
@@ -71,7 +69,8 @@ function addItem() {
     })
     .then(response => {
         if (response.ok) {
-            fetchGroceryList();
+            // Add the new item to the page immediately
+            addItemToList(category.toLowerCase(), item, quantity);
             document.getElementById('add-item-form').reset();
         } else {
             console.error('Error adding item');
