@@ -1,37 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchGroceryList();
     document.getElementById('add-item-form').addEventListener('submit', (event) => {
-        event.preventDefault();
+        event.preventDefault();  // Prevent default form submission behavior
         addItem();
     });
 });
 
 function fetchGroceryList() {
-    if (navigator.onLine) {
-        fetch('http://localhost:8000')
-            .then(response => response.json())
-            .then(data => {
-                displayGroceryList(data);
-                storeGroceryListOffline(data);
-            })
-            .catch(error => console.error('Error fetching grocery list:', error));
-    } else {
-        fetchGroceryListOffline();
-    }
-}
-
-function storeGroceryListOffline(data) {
-    localStorage.setItem('groceryList', JSON.stringify(data));
-}
-
-function fetchGroceryListOffline() {
-    const storedData = localStorage.getItem('groceryList');
-    if (storedData) {
-        const data = JSON.parse(storedData);
-        displayGroceryList(data);
-    } else {
-        console.log('No data found in localStorage');
-    }
+    fetch('http://localhost:8000')
+        .then(response => response.json())
+        .then(data => {
+            displayGroceryList(data);
+        })
+        .catch(error => {
+            console.error('Error fetching grocery list:', error);
+        });
 }
 
 function displayGroceryList(data) {
@@ -41,13 +24,17 @@ function displayGroceryList(data) {
     foodListElement.innerHTML = '';
     nonFoodListElement.innerHTML = '';
 
-    data.food.forEach(item => {
-        addItemToList('food', item.food, item.amount);
-    });
+    if (data.food) {
+        data.food.forEach(item => {
+            addItemToList('food', item.food, item.amount);
+        });
+    }
 
-    data.nonfood.forEach(item => {
-        addItemToList('nonfood', item.item, item.amount);
-    });
+    if (data.nonfood) {
+        data.nonfood.forEach(item => {
+            addItemToList('nonfood', item.item, item.amount);
+        });
+    }
 }
 
 function addItemToList(category, item, amount) {
@@ -69,9 +56,7 @@ function addItem() {
     })
     .then(response => {
         if (response.ok) {
-            // Add the new item to the page immediately
-            addItemToList(category.toLowerCase(), item, quantity);
-            document.getElementById('add-item-form').reset();
+            fetchGroceryList();  // Refresh the list to include the new item
         } else {
             console.error('Error adding item');
         }

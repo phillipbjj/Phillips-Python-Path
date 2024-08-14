@@ -16,11 +16,27 @@ def main():
             self.end_headers()  # Ends the headers section, ready to send content
         
         #Handling the GET request to view the webpage and database contents
-        def __init_(self, *args, **kwargs):
-            super().__init__(*args, directory=',/', **kwargs)
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, directory='/', **kwargs)
         
         def do_GET(self):
-            super().do_GET()
+            if self.path == '/':  # Serve the HTML page with embedded grocery data
+                self.serve_html_with_data()
+            else:
+                super().do_GET()
+
+        def serve_html_with_data(self):
+            groceries = self.fetch_groceries()
+            self._set_response(status=200, content_type='text/html')
+
+            try:
+                with open('index.html', 'r') as file:
+                    html_content = file.read()
+
+                html_content = html_content.replace('/*DATA_PLACEHOLDER*/', json.dumps(groceries))
+                self.wfile.write(html_content.encode('utf-8'))
+            except FileNotFoundError:
+                self.send_error(404, "File not found")
 
                 
         def do_POST(self):
