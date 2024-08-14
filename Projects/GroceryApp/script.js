@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fetchGroceryList() {
     if (navigator.onLine) {
-        fetch('/grocerylist')
+        fetch('http://localhost:8000')
             .then(response => response.json())
             .then(data => {
                 displayGroceryList(data);
@@ -64,7 +64,7 @@ function addItem() {
     const item = document.getElementById('item').value;
     const quantity = document.getElementById('quantity').value;
 
-    fetch('/add', {
+    fetch('http://localhost:8000', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ category, g_item: item, amount: quantity })
