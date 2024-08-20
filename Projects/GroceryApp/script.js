@@ -21,24 +21,24 @@ function displayGroceryList(data) {
     const foodListElement = document.getElementById('food-list');
     const nonFoodListElement = document.getElementById('nonfood-list');
 
+    // Clear the existing content
     foodListElement.innerHTML = '';
     nonFoodListElement.innerHTML = '';
 
     if (data.food) {
         data.food.forEach(item => {
-            addItemToList('food', item.food, item.amount);
+            addItemToList(foodListElement, item.food, item.amount);
         });
     }
 
     if (data.nonfood) {
         data.nonfood.forEach(item => {
-            addItemToList('nonfood', item.item, item.amount);
+            addItemToList(nonFoodListElement, item.item, item.amount);
         });
     }
 }
 
-function addItemToList(category, item, amount) {
-    const listElement = category === 'food' ? document.getElementById('food-list') : document.getElementById('nonfood-list');
+function addItemToList(listElement, item, amount) {
     const li = document.createElement('li');
     li.textContent = `${item}: ${amount}`;
     listElement.appendChild(li);
@@ -57,6 +57,8 @@ function addItem() {
     .then(response => {
         if (response.ok) {
             fetchGroceryList();  // Refresh the list to include the new item
+            document.getElementById('item').value = '';
+            document.getElementById('quantity').value = '';
         } else {
             console.error('Error adding item');
         }
